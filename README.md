@@ -49,7 +49,11 @@ Do not commit directly to `main`.
 
 - `main`: Final, submitted version
 - `dev`: Integration branch where feature work is merged
-- `feature/*`: One branch per team member or task
+- `feature/<name>`: One branch per team member, created from `dev`.
+
+Use your first name in lowercase for your branch
+
+Create your branch from `dev`, not from `main`.
 
 ## Notes
 
