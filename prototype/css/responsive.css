@@ -1,0 +1,23 @@
+/* Tablet and up (576px and wider) */
+@media (min-width: 576px) {
+  .registrar-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Desktop (992px and wider) */
+@media (min-width: 992px) {
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero h1 {
+    font-size: var(--font-size-heading);
+  }
+
+  .card {
+    max-width: 640px;
+  }
+}

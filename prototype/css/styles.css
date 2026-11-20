@@ -1,0 +1,306 @@
+:root {
+  /* Pending: measure on the original site and replace */
+  --color-primary: #337AB7;   /* placeholder */
+  --color-accent: #F7C48D;    /* placeholder */
+  --color-surface: #EEEEEE;   /* placeholder */
+
+  --color-text: #333333;
+  --color-text-muted: #767676;
+  --color-background: #FFFFFF;
+  --color-warning-text: #333333;
+  --color-warning-bg: #FCF8E3;
+  --color-error: #A94442;
+
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --font-size-small: 14px;
+  --font-size-heading: 30px;
+  --font-size-heading-mobile: 24px;
+  --line-height: 1.5;
+
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-heading-top: 20px;
+  --space-heading-bottom: 10px;
+}
+
+/* 2. Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Visible keyboard focus, so people using a keyboard can see where they are */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+h1,
+h2 {
+  line-height: 1.25;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Skip link: hidden until a keyboard user tabs to it */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-text);
+  color: var(--color-background);
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: var(--space-md);
+  top: var(--space-md);
+}
+
+/* 3. Header and navigation (visible on every screen, no hidden menu) */
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-text-muted);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-text);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 40px;
+  height: 40px;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+}
+
+.nav-link {
+  padding: var(--space-sm) 0;
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  border-bottom-color: var(--color-primary);
+}
+
+.nav-link[aria-current="page"] {
+  font-weight: bold;
+  border-bottom-color: var(--color-primary);
+}
+
+.header-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* 4. Buttons (minimum 44px touch target) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 var(--space-md);
+  border: 2px solid var(--color-primary);
+  border-radius: 6px;
+  font: inherit;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  text-decoration: none;
+  filter: brightness(0.92);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+}
+
+/* 5. Hero and section headings */
+main {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.hero h1 {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--font-size-heading-mobile);
+}
+
+.hero p {
+  margin: 0 0 var(--space-lg);
+  color: var(--color-text-muted);
+}
+
+h2 {
+  margin: var(--space-heading-top) 0 var(--space-heading-bottom);
+  font-size: var(--font-size-base);
+}
+
+/* 6. Cards */
+.card {
+  padding: var(--space-md);
+  background: var(--color-background);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.card h2:first-child {
+  margin-top: 0;
+}
+
+/* 7. Registrar choices (clear labels; disabled items are not links) */
+.registrar-list {
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.registrar-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 44px;
+  padding: var(--space-md) 44px var(--space-md) var(--space-md);
+  border: 2px solid var(--color-surface);
+  border-radius: 6px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.registrar-option:hover {
+  text-decoration: none;
+  border-color: var(--color-primary);
+}
+
+.registrar-name {
+  font-weight: bold;
+}
+
+.registrar-note {
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+}
+
+.registrar-go {
+  position: absolute;
+  right: var(--space-md);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: var(--color-primary);
+}
+
+.registrar-option.is-disabled {
+  background: var(--color-surface);
+  border-color: transparent;
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.badge {
+  align-self: flex-start;
+  padding: 2px var(--space-sm);
+  border-radius: 4px;
+  background: var(--color-background);
+  font-size: var(--font-size-small);
+  color: var(--color-text);
+}
+
+/* 8. Advisory (dark text on light background, replacing red on red) */
+.advisory {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  border-left: 6px solid var(--color-error);
+  border-radius: 6px;
+  background: var(--color-warning-bg);
+  color: var(--color-warning-text);
+}
+
+.advisory h2 {
+  margin-top: 0;
+}
+
+.advisory p {
+  margin: 0 0 var(--space-sm);
+}
+
+.advisory p:last-child {
+  margin-bottom: 0;
+}
+
+/* 9. Footer */
+.site-footer {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-top: 1px solid var(--color-surface);
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+}
+
+.site-footer p {
+  margin: 0 0 var(--space-sm);
+}
