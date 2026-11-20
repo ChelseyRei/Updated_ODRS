@@ -20,7 +20,7 @@ Fatima Santiago
 ├── docs/               Research, design, and planning documents
 │   ├── research/       Heuristic evaluation and personas
 │   ├── design/         User flows, design tokens, and wireframes
-│   └── figma-links.md  Links to the Figma design files
+│   └── design-links.md Links to the Canva and Figma design files
 └── prototype/          Front-end prototype
     ├── *.html          One page per feature area
     ├── css/            styles.css (shared) and responsive.css
