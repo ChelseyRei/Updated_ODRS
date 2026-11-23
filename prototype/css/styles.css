@@ -1,15 +1,24 @@
 :root {
-  /* Pending: measure on the original site and replace */
-  --color-primary: #337AB7;   /* placeholder */
-  --color-accent: #F7C48D;    /* placeholder */
-  --color-surface: #EEEEEE;   /* placeholder */
+  /* Brand colors (observed on the original ODRS site) */
+  --color-primary: #800000;        /* PUP maroon: buttons, links, active tab */
+  --color-highlight: #FEDD0B;      /* Advisory background, filter hover */
+  --color-filter-bg: #FFFAC5;      /* Filter menu background */
+  --color-success: #126C25;        /* Payment actions */
+  --color-success-alt: #279A40;    /* "Yes" status in Requests */
+  --color-button-active: #AE3838;  /* Clicked or selected button */
+  --color-required: #E50000;       /* Mandatory asterisk */
 
-  --color-text: #333333;
-  --color-text-muted: #767676;
-  --color-background: #FFFFFF;
-  --color-warning-text: #333333;
-  --color-warning-bg: #FCF8E3;
-  --color-error: #A94442;
+  /* Neutrals */
+  --color-text: #333333;          
+  --color-text-muted: #595959;    
+  --color-background: #FFFFFF;     
+  --color-surface: #D9D9D9;       
+  --color-border: #767676;        
+
+  /* Feedback */
+  --color-warning-text: #333333;   /* Advisory text */
+  --color-warning-bg: #FEDD0B;     /* Advisory background (yellow) */
+  --color-error: #A94442;          /* Form error text (proposed) */
 
   --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-size-base: 16px;
@@ -25,7 +34,7 @@
   --space-heading-bottom: 10px;
 }
 
-/* 2. Base */
+/* Base */
 *,
 *::before,
 *::after {
@@ -89,10 +98,10 @@ h2 {
   top: var(--space-md);
 }
 
-/* 3. Header and navigation (visible on every screen, no hidden menu) */
+/* Header and navigation */
 .site-header {
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-text-muted);
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .header-inner {
@@ -145,7 +154,7 @@ h2 {
   gap: var(--space-sm);
 }
 
-/* 4. Buttons (minimum 44px touch target) */
+/* Buttons (minimum 44px touch target) */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -176,7 +185,7 @@ h2 {
   color: var(--color-primary);
 }
 
-/* 5. Hero and section headings */
+/* Hero and section headings */
 main {
   padding-top: var(--space-lg);
   padding-bottom: var(--space-lg);
@@ -197,7 +206,7 @@ h2 {
   font-size: var(--font-size-base);
 }
 
-/* 6. Cards */
+/* Cards */
 .card {
   padding: var(--space-md);
   background: var(--color-background);
@@ -209,7 +218,7 @@ h2 {
   margin-top: 0;
 }
 
-/* 7. Registrar choices (clear labels; disabled items are not links) */
+/* Registrar choices (clear labels; disabled items are not links) */
 .registrar-list {
   display: grid;
   gap: var(--space-sm);
@@ -225,7 +234,7 @@ h2 {
   gap: 2px;
   min-height: 44px;
   padding: var(--space-md) 44px var(--space-md) var(--space-md);
-  border: 2px solid var(--color-surface);
+  border: 2px solid var(--color-border);
   border-radius: 6px;
   color: var(--color-text);
   text-decoration: none;
@@ -270,11 +279,273 @@ h2 {
   color: var(--color-text);
 }
 
-/* 8. Advisory (dark text on light background, replacing red on red) */
+/* Tabs (logged-in navigation) */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-lg);
+  padding-top: var(--space-md);
+  border-bottom: 1px solid var(--color-surface);
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+.tab:hover {
+  border-bottom-color: var(--color-primary);
+}
+
+.tab[aria-current="page"] {
+  font-weight: bold;
+  border-bottom-color: var(--color-primary);
+}
+
+/* Account settings page */
+.settings {
+  padding-top: var(--space-lg);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border-radius: 8px;
+}
+
+.profile h1 {
+  margin: 0;
+  font-size: var(--font-size-heading-mobile);
+}
+
+.profile-meta {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.photo-box {
+  position: relative;
+  width: 160px;
+  margin: 0 auto;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  background: var(--color-background);
+  border: 2px solid var(--color-text-muted);
+  border-radius: 6px;
+  color: var(--color-text-muted);
+}
+
+.avatar .icon {
+  width: 60%;
+  height: 60%;
+}
+
+.avatar-large {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.photo-zoom {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: none;
+  border-radius: 6px;
+  background: var(--color-background);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.photo-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.photo-actions .btn {
+  flex: 1;
+}
+
+.btn-small {
+  min-height: 44px;
+  padding: 0 var(--space-sm);
+}
+
+.settings-grid {
+  display: grid;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.panel {
+  padding: var(--space-md);
+  background: var(--color-background);
+  border: 1px solid var(--color-surface);
+  border-radius: 8px;
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-surface);
+}
+
+.panel-head h2 {
+  margin: 0;
+  font-size: var(--font-size-base);
+}
+
+/* Label above value, so nothing needs to scroll sideways on a phone */
+.info-list {
+  display: grid;
+  gap: var(--space-md);
+  margin: 0;
+}
+
+.info-list dt {
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+}
+
+.info-list dd {
+  margin: 2px 0 0;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+/* Forms */
+.form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: bold;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  font: inherit;
+  font-weight: normal;
+  color: var(--color-text);
+  background: var(--color-background);
+  border: 2px solid var(--color-text-muted);
+  border-radius: 6px;
+}
+
+.form textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.choice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.choice legend {
+  margin-bottom: var(--space-sm);
+  padding: 0;
+  font-weight: bold;
+}
+
+.form .choice-option {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 44px;
+  font-weight: normal;
+}
+
+.form .choice-option input {
+  width: 20px;
+  height: 20px;
+  min-height: auto;
+}
+
+/* Dialogs */
+.dialog {
+  width: min(92vw, 520px);
+  max-height: 90vh;
+  padding: var(--space-lg);
+  color: var(--color-text);
+  background: var(--color-background);
+  border: none;
+  border-radius: 8px;
+}
+
+.dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dialog h2 {
+  margin-top: 0;
+  font-size: var(--font-size-heading-mobile);
+}
+
+.dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+}
+
+.sample-photo {
+  display: grid;
+  place-items: center;
+  height: 120px;
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+}
+
+.guidelines {
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* Advisory (dark text on light background, replacing red on red) */
 .advisory {
   margin-top: var(--space-lg);
   padding: var(--space-md);
-  border-left: 6px solid var(--color-error);
+  border-left: 6px solid var(--color-primary);
   border-radius: 6px;
   background: var(--color-warning-bg);
   color: var(--color-warning-text);
@@ -292,7 +563,7 @@ h2 {
   margin-bottom: 0;
 }
 
-/* 9. Footer */
+/* Footer */
 .site-footer {
   padding-top: var(--space-lg);
   padding-bottom: var(--space-lg);
@@ -303,4 +574,56 @@ h2 {
 
 .site-footer p {
   margin: 0 0 var(--space-sm);
+}
+
+/* Filter menu: pale yellow, turns yellow on hover */
+.filter-btn {
+  min-height: 44px;
+  padding: 0 var(--space-md);
+  background: var(--color-filter-bg);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  background: var(--color-highlight);
+}
+
+/* Selected or clicked button (add this class with JavaScript) */
+.is-selected {
+  background: var(--color-button-active);
+  border-color: var(--color-button-active);
+  color: #FFFFFF;
+}
+
+.is-selected:hover {
+  background: var(--color-button-active);
+  border-color: var(--color-button-active);
+  color: #FFFFFF;
+}
+
+/* Mandatory asterisk. Add it next to the label and mark the input with the required attribute. */
+.required {
+  color: var(--color-required);
+  font-weight: bold;
+}
+
+/* Payment button */
+.btn-pay {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: #FFFFFF;
+}
+
+/* "Yes" status: bold and at least 19px, so the 3.6:1 contrast meets the large-text rule */
+.status-yes {
+  padding: 2px var(--space-sm);
+  border-radius: 4px;
+  background: var(--color-success-alt);
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 1.2rem;
 }

@@ -21,3 +21,41 @@
     max-width: 640px;
   }
 }
+
+/* Tablet and up (576px and wider) */
+@media (min-width: 576px) {
+  .profile {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .photo-box {
+    width: 180px;
+    margin: 0;
+  }
+
+  .settings-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .panel-password {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Desktop (992px and wider) */
+@media (min-width: 992px) {
+  .profile h1 {
+    font-size: var(--font-size-heading);
+  }
+
+  .settings-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+
+  .panel-password {
+    grid-column: auto;
+  }
+}
