@@ -1,5 +1,5 @@
 :root {
-  /* Brand colors (observed on the original ODRS site) */
+  /* Brand colors  */
   --color-primary: #800000;        /* PUP maroon: buttons, links, active tab */
   --color-highlight: #FEDD0B;      /* Advisory background, filter hover */
   --color-filter-bg: #FFFAC5;      /* Filter menu background */
@@ -592,7 +592,7 @@ h2 {
   background: var(--color-highlight);
 }
 
-/* Selected or clicked button (add this class with JavaScript) */
+/* Selected or clicked button */
 .is-selected {
   background: var(--color-button-active);
   border-color: var(--color-button-active);
