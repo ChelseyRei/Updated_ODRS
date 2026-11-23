@@ -38,7 +38,7 @@ For the best results, use Chrome or Edge. To test responsiveness, use the browse
 ## Contributing
 
 1. Pull the latest changes from `dev`.
-2. Create a feature branch from `dev`, for example `feature/registration-login`.
+2. Create a feature branch from `dev`, for example `feature/chels.
 3. Make your changes and commit them with a clear message.
 4. Push your branch and open a pull request into `dev`.
 5. Ask a teammate to review before merging.
