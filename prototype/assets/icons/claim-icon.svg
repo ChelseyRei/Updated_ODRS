@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+  <defs>
+    <mask id="print-holes">
+      <rect width="24" height="24" fill="#fff"/>
+      <circle cx="19.4" cy="10.1" r="0.9" fill="#000"/>
+      <rect x="9.4" y="16.9" width="5.5" height="1.2" rx="0.6" fill="#000"/>
+      <rect x="9.4" y="19.7" width="5.5" height="1.2" rx="0.6" fill="#000"/>
+    </mask>
+  </defs>
+  <rect x="5.5" y="0.9" width="12.9" height="4.6" rx="0.5"/>
+  <g mask="url(#print-holes)">
+    <path d="M2.5 6.7H21.5A2.5 2.5 0 0 1 24 9.2V17.1A2.5 2.5 0 0 1 21.5 19.6H18.4V12.8H5.5V19.6H2.5A2.5 2.5 0 0 1 0 17.1V9.2A2.5 2.5 0 0 1 2.5 6.7Z"/>
+    <rect x="7.4" y="14.8" width="9.2" height="7.3" rx="0.6"/>
+  </g>
+</svg>
