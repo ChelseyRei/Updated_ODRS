@@ -60,7 +60,10 @@ button, input, optgroup, select, textarea {
     line-height: inherit;
     color: inherit;
 }
-button { overflow: visible; text-transform: none; }
+button {
+    overflow: visible;
+    text-transform: none;
+}
 button, html input[type=button], input[type=reset], input[type=submit] {
     -webkit-appearance: button;
     cursor: pointer;
@@ -100,8 +103,8 @@ h4 { margin-top: 10px; margin-bottom: 10px; font-size: 18px; }
 p { margin: 0 0 10px; }
 ul, ol { margin-top: 0; margin-bottom: 10px; }
 
-.text-left   { 
-    text-align: left; 
+.text-left {
+    text-align: left;
 }
 .text-right  { text-align: right; }
 .text-center { text-align: center; }
@@ -127,19 +130,18 @@ ul, ol { margin-top: 0; margin-bottom: 10px; }
     -moz-osx-font-smoothing: grayscale;
 }
 
-.nav-pills > li > a > .glyphicon { 
+.nav-pills > li > a > .glyphicon {
     color: #800000;
-    font-size: 18px;
-    top: 0; 
+    font-size: 21px;
+    top: 0;
     line-height: 1;
 }
-
 
 .glyphicon-cog:before           { content: "\e019"; }
 .glyphicon-collapse-down:before { content: "\e159"; }
 .glyphicon-collapse-up:before   { content: "\e160"; }
-.glyphicon-file:before          { 
-    content: "\e022"; 
+.glyphicon-file:before {
+    content: "\e022";
     color: #800000;
 }
 .glyphicon-list-alt:before      { content: "\e032"; }
@@ -314,16 +316,21 @@ textarea.form-control { height: auto; }
     background-color: #3071a9;
     border-color: #285e8e;
 }
-.btn-danger.navbar-btn { 
-    color: #fff; 
-    background-color: #800000; 
+.btn-danger.navbar-btn {
+    color: #fff;
+    background-color: #800000;
     border-color: #800000;
     font-size: 15px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.btn-danger.navbar-btn:hover { 
-    color: #fff; 
-    background-color: #a10d0d; 
+.btn-danger.navbar-btn:hover {
+    color: #fff;
+    background-color: #a10d0d;
     border-color: #a10d0d;
 }
 
@@ -334,14 +341,12 @@ textarea.form-control { height: auto; }
     border-color: #ac2925;
 }
 
-
-
 .btn-sm { padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; }
 .btn-xs { padding: 1px 5px;  font-size: 12px; line-height: 1.5; border-radius: 3px; }
 
-.pay-btn:hover, .pay-btn:focus, .pay-btn:active, .pay-btn.active { 
-    color: #fff; 
-    background-color: #eea236; 
+.pay-btn:hover, .pay-btn:focus, .pay-btn:active, .pay-btn.active {
+    color: #fff;
+    background-color: #eea236;
     border-color: #eea236; }
 
 /* ==========================================================================
@@ -356,18 +361,17 @@ textarea.form-control { height: auto; }
 /* Nav + pills */
 .nav { padding-left: 0; margin-bottom: 0; list-style: none; }
 .nav > li { position: relative; display: block; }
-.nav > li > a { 
-    position: relative; 
-    display: block; 
-    padding: 10px 15px; 
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
     font-weight: 700;
 }
 .nav > li > a:hover, .nav > li > a:focus { text-decoration: none; background-color: #eee; }
-.nav-pills > li { 
-    float: left; 
+.nav-pills > li {
+    float: left;
 }
 .nav-pills > li + li { margin-left: 2px; }
-
 
 /* Labels */
 .label {
@@ -414,10 +418,10 @@ textarea.form-control { height: auto; }
     border-radius: 4px;
     border-radius: 15px
 }
-.alert-danger, .alert-success { 
-    color: #000000; 
-    background-color: #fedd0b; 
-    border-color: #800000; 
+.alert-danger, .alert-success {
+    color: #000000;
+    background-color: #fedd0b;
+    border-color: #800000;
     border-width: 3px;
 }
 
@@ -451,10 +455,10 @@ textarea.form-control { height: auto; }
 }
 .panel-body { padding: 15px; }
 .panel-default { border-color: #ddd; }
-.panel-default > .panel-heading { 
-    color: #ffffff; 
+.panel-default > .panel-heading {
+    color: #ffffff;
     font-weight: bold;
-    background-color: #800000; 
+    background-color: #800000;
     border-color: #ddd; }
 
 /* Well */
@@ -716,7 +720,6 @@ button.close { -webkit-appearance: none; padding: 0; cursor: pointer; background
     border-radius: 0;
     font-size: 16px;
 
-
     display: flex;
     align-items: center;   /* centers icon and text vertically */
     gap: 6px;              /* space between icon and text */
@@ -736,6 +739,14 @@ button.close { -webkit-appearance: none; padding: 0; cursor: pointer; background
 .nav-pills > li.active > a:hover {
     background-color: #E3E3E3;
     color: #5c5c5c;
+}
+
+.nav-pills > li > a,
+.nav-pills > li > a:focus,
+.nav-pills > li > a:active,
+.nav-pills > li > a:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 /* Requests table */
@@ -781,8 +792,6 @@ td.status .btn-xs {
 }
 
 /* Action buttons */
-
-
 td.action .btn {
     min-width: 145px;
     padding: 8px;
@@ -793,11 +802,9 @@ td.action .btn {
     vertical-align: middle;
 }
 
-td.action .btn-danger.cancel-btn{
+td.action .btn-danger.cancel-btn {
     min-width: 90px !important;
 }
-
-
 
 td.action .btn .glyphicon {
     font-size: 14px;
@@ -873,9 +880,6 @@ td.action .btn-primary:active {
     opacity: .85;
 }
 
-/* Navbar */
-/* (hamburger removed; navbar-header, brand and Logout always visible; see section 9) */
-
 /* Footer: normal block at the very bottom, never covers content */
 footer {
     margin-top: auto;
@@ -932,7 +936,56 @@ footer {
 .footer-toggle:hover,
 .footer-toggle:focus { background: #7D0018; }
 
+/* SVG icons (colored with mask; color set by background-color) */
+.logo-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #800000;
+    -webkit-mask: url("../assets/icons/system-logo-icon.svg") no-repeat center / contain;
+    mask: url("../assets/icons/system-logo-icon.svg") no-repeat center / contain;
+}
 
+.logout-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #fafafa;
+    -webkit-mask: url("../assets/icons/logout-icon.svg") no-repeat center / contain;
+    mask: url("../assets/icons/logout-icon.svg") no-repeat center / contain;
+}
+
+.requests-icon {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #800000;
+    -webkit-mask: url("../assets/icons/requests-icon.svg") no-repeat center / contain;
+    mask: url("../assets/icons/requests-icon.svg") no-repeat center / contain;
+}
+
+.new-request-icon {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-color: #800000;
+    -webkit-mask: url("../assets/icons/new-request-icon.svg") no-repeat center / contain;
+    mask: url("../assets/icons/new-request-icon.svg") no-repeat center / contain;
+}
+
+.settings-icon{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-color: #800000;
+    -webkit-mask: url("../assets/icons/gear-icon.svg") no-repeat center / contain;
+    mask: url("../assets/icons/gear-icon.svg") no-repeat center / contain;
+}
+
+/* ==========================================================================
+   MOBILE (max-width: 767px): all phone rules in one place
+   Keep this block last so it overrides the desktop rules above.
+   ========================================================================== */
 @media (max-width: 767px) {
 
     /* Table rows become cards */
@@ -954,6 +1007,7 @@ footer {
         text-align: left !important;
         border: 0 !important;
         border-bottom: 1px solid #eee !important;
+        font-size: 13px;
     }
     .table > tbody > tr > td:last-child { border-bottom: 0 !important; }
 
@@ -965,22 +1019,29 @@ footer {
         font-weight: 700;
         letter-spacing: .04em;
         text-transform: uppercase;
-        color: #6B7280;
+        color: #800000;
     }
 
     /* Full-width, easy-to-tap buttons */
     .action-btns { align-items: stretch; }
-    td.action .btn { 
-        width: 100%; 
-        padding: 8px; 
-
+    td.action .btn {
+        width: 100%;
+        padding: 8px;
+        font-size: 13px;
     }
     td.status .btn-xs { width: 36px; height: 36px; line-height: 34px; }
-}
 
-@media (max-width: 767px) {
+    /* Status labels and dates */
+    .release-date {
+        font-size: 14px;
+    }
+    td.status .label,
+    td.status .paid-label {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
 
-    /* Tabs: one scrollable row instead of wrapping or overflowing */
+    /* Tabs: one scrollable row */
     .nav-pills {
         display: flex;
         overflow-x: auto;
@@ -989,34 +1050,62 @@ footer {
     }
     .nav-pills:before, .nav-pills:after { display: none; }
     .nav-pills > li { float: none; flex: 0 0 auto; }
-    .nav-pills > li > a { 
-        padding: 12px; 
-        font-size: 14px !important;
+    .nav-pills > li > a {
+        padding: 10px;
+        font-size: 13px !important;
+    }
+    .nav-pills > li > a > .glyphicon,
+    .nav-pills > li > a > .user-icon,
+    .nav-pills > li > a > .requests-icon {
+        font-size: 16px;
     }
 
+    /* Header */
     .navbar-brand {
         display: flex;
         align-items: center;
         float: left;
-        height: 50px;
-        padding: 0 15px;
+        height: auto;
+        min-height: 50px;
+        padding: 8px 10px;
         gap: 6px;
-        font-size: 20px !important;
-        line-height: 20px;
+        font-size: 16px !important;
+        line-height: 1.2;
         font-weight: 700;
     }
-
     .navbar-brand img {
         display: block;
     }
-
     .navbar-collapse .navbar-btn { margin: 8px 10px; }
+    .navbar-btn.btn-danger,
+    .btn-danger.navbar-btn {
+        font-size: 13px !important;
+    }
 
- 
+    /* Layout */
     .body { margin-left: 3%; margin-right: 3%; }
     .panel-body { padding: 10px; }
+    .panel-default > .panel-heading { font-size: 15px; }
+    .modal-title { font-size: 16px; }
 
-   
+    /* Table header text */
+    .table > tbody > tr > th {
+        font-size: 13px;
+    }
+
+    /* Advisories */
+    details summary {
+        font-size: 14px !important;
+    }
+    details > div {
+        font-size: 13px !important;
+    }
+
+    /* Footer */
     #div_footer > .container { padding: 10px 10px 10px 50px !important; }
-    #div_footer .footer-text { font-size: 12px; padding: 4px; }
+    #div_footer .footer-text {
+        font-size: 11px;
+        line-height: 1.5;
+        padding: 4px;
+    }
 }
