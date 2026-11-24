@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Settings | Online Document Request System</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+
+<!-- Icon sprite. The shapes match the files in assets/icons/. They are inline so they take the page colors. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="logo-holes">
+      <rect width="24" height="24" fill="#fff"/>
+      <path d="M13.9 1.6V6.2Q13.9 7.1 14.8 7.1H19.2Q19.8 7.1 19.4 6.6L14.5 1.7Q13.9 1.1 13.9 1.6Z" fill="#000"/>
+      <rect x="6" y="10.15" width="12" height="1.5" rx="0.75" fill="#000"/>
+      <rect x="6" y="13.15" width="12" height="1.5" rx="0.75" fill="#000"/>
+      <rect x="6" y="16.15" width="12" height="1.5" rx="0.75" fill="#000"/>
+      <rect x="6" y="19.15" width="12" height="1.5" rx="0.75" fill="#000"/>
+    </mask>
+    <mask id="plus-cut">
+      <rect width="460" height="460" fill="#fff"/>
+      <path d="M230 115V346M114 230H346" stroke="#000" stroke-width="46" stroke-linecap="round"/>
+    </mask>
+    <mask id="requests-lines">
+      <rect x="0" y="0" width="600" height="600" fill="#fff"/>
+      <rect x="165" y="120" width="90" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="155" width="147" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="202" width="245" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="242" width="245" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="281" width="245" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="319" width="245" height="16" rx="8" fill="#000"/>
+      <rect x="321" y="359" width="89" height="16" rx="8" fill="#000"/>
+    </mask>
+  </defs>
+
+  <symbol id="icon-logo" viewBox="0 0 24 24" fill="currentColor">
+    <path mask="url(#logo-holes)" d="M13.2 0L19.4 4.5Q21 5.8 21 7.8V22Q21 24 19 24H5Q3 24 3 22V2Q3 0 5 0Z"/>
+  </symbol>
+  <symbol id="icon-plus" viewBox="0 0 460 460">
+    <circle cx="230" cy="230" r="230" fill="currentColor" mask="url(#plus-cut)"/>
+  </symbol>
+  <symbol id="icon-requests" viewBox="40 84 445 396" fill="currentColor">
+    <path mask="url(#requests-lines)" d="M140 55H362V130H437V443H140Z"/>
+    <path d="M380 68V112H425Z"/>
+    <path d="M48 130L78 117L111 268Z"/>
+    <path d="M90 100L122 92L121 240Z"/>
+    <path d="M178 460L232 462L180 472Z"/>
+    <path d="M464 327L475 356L464 352Z"/>
+    <path d="M454 358L465 358L455 406Z"/>
+  </symbol>
+  <symbol id="icon-person" viewBox="0 0 24 24" fill="currentColor">
+    <circle cx="12" cy="6.5" r="6.5"/>
+    <path d="M0 24C0 17.5 3.5 14.2 8 12.8Q12 14.8 16 12.8C20.5 14.2 24 17.5 24 24Z"/>
+  </symbol>
+  <symbol id="icon-avatar" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4.5">
+    <circle cx="50" cy="32" r="20"/>
+    <path d="M12 100C12 72 28 60 50 60C72 60 88 72 88 100"/>
+  </symbol>
+  <symbol id="icon-logout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.5 3.7V1.2H1.2V22.8H14.5V20.3"/>
+    <path d="M6.2 12H22.8M18.1 7.3L22.8 12L18.1 16.9"/>
+  </symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <circle cx="9.9" cy="9.9" r="8.8"/>
+    <path d="M16.6 16.6L22.6 22.6" stroke-width="2.2"/>
+  </symbol>
+  <symbol id="icon-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 18.2V1.4M2.2 8L12 1.4L21.8 8"/>
+    <path d="M0.75 18V20.8A2.2 2.2 0 0 0 2.95 23H21.05A2.2 2.2 0 0 0 23.25 20.8V18"/>
+  </symbol>
+  <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 1.2V17.2M2.5 10.2L12 17.2L21.5 10.2"/>
+    <path d="M0.75 18V20.8A2.2 2.2 0 0 0 2.95 23H21.05A2.2 2.2 0 0 0 23.25 20.8V18"/>
+  </symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+    <path d="M5 5L19 19M19 5L5 19"/>
+  </symbol>
+</svg>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="app-header">
+  <div class="container app-header-inner">
+    <a class="brand" href="index.html">
+      <svg class="icon brand-logo" aria-hidden="true"><use href="#icon-logo"/></svg>
+      <span>Online Document Request System</span>
+    </a>
+    <a class="btn-logout" href="index.html">
+      <svg class="icon" aria-hidden="true"><use href="#icon-logout"/></svg>
+      <span>Log out</span>
+    </a>
+  </div>
+</header>
+
+<nav class="container tabs" aria-label="Account navigation">
+  <a class="tab" href="new-request.html">
+    <svg class="icon" aria-hidden="true"><use href="#icon-plus"/></svg>
+    New Request
+  </a>
+  <a class="tab" href="requests.html">
+    <svg class="icon" aria-hidden="true"><use href="#icon-requests"/></svg>
+    Requests
+  </a>
+  <a class="tab" href="settings.html" aria-current="page">
+    <svg class="icon" aria-hidden="true"><use href="#icon-person"/></svg>
+    Account Settings
+  </a>
+</nav>
+
+<main id="main" class="container">
+
+  <h1 class="page-bar">Account Settings</h1>
+
+  <section class="profile" aria-label="Profile">
+    <div>
+      <p class="profile-name">NAME HERE</p>
+      <p class="profile-meta">COURSE</p>
+      <p class="profile-meta">STUDENT NUMBER</p>
+    </div>
+
+    <div class="photo">
+      <div class="photo-frame">
+        <svg class="avatar" aria-hidden="true"><use href="#icon-avatar"/></svg>
+        <button type="button" class="photo-zoom" data-open="photo-zoom" aria-label="Enlarge profile photo">
+          <svg class="icon" aria-hidden="true"><use href="#icon-search"/></svg>
+        </button>
+      </div>
+      <div class="photo-bar">
+        <button type="button" class="photo-action" data-open="photo-requirements">
+          <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-upload"/></svg>
+          Upload
+        </button>
+        <button type="button" class="photo-action" aria-label="Download photo">
+          <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-download"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="settings-grid">
+
+    <section class="panel" aria-labelledby="personal-heading">
+      <div class="panel-head">
+        <h2 id="personal-heading">Personal Information</h2>
+        <button type="button" class="btn-edit" data-open="edit-personal">Edit</button>
+      </div>
+      <div class="panel-body">
+        <dl class="info-list">
+          <div><dt>Last Name:</dt><dd>LAST NAME</dd></div>
+          <div><dt>First Name:</dt><dd>FIRST NAME</dd></div>
+          <div><dt>Middle Name:</dt><dd>MIDDLE NAME</dd></div>
+          <div><dt>Date of Birth:</dt><dd>MM/DD/YYYY</dd></div>
+          <div><dt>Permanent Address:</dt><dd>COMPLETE PERMANENT ADDRESS</dd></div>
+          <div><dt>Email Address:</dt><dd>student@gmail.com</dd></div>
+          <div><dt>Mobile Number:</dt><dd>09xxxxxxxxx</dd></div>
+          <div><dt>Phone Number:</dt><dd>23xxxx</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="educational-heading">
+      <div class="panel-head">
+        <h2 id="educational-heading">Educational Information</h2>
+        <button type="button" class="btn-edit" data-open="edit-educational">Edit</button>
+      </div>
+      <div class="panel-body">
+        <dl class="info-list">
+          <div><dt>Student Number:</dt><dd>XXXX-XXXXX-X-X</dd></div>
+          <div><dt>Status:</dt><dd>Undergrad</dd></div>
+          <div><dt>School Year Admitted:</dt><dd>XXXX</dd></div>
+          <div><dt>Admitted As:</dt><dd>New Freshman</dd></div>
+          <div><dt>Course:</dt><dd>COURSE</dd></div>
+          <div><dt>High School:</dt><dd>HIGH SCHOOL NAME (XXXX)</dd></div>
+          <div><dt>Elementary:</dt><dd>ELEMENTARY NAME (XXXX)</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="panel panel-password" aria-labelledby="password-heading">
+      <div class="panel-head">
+        <h2 id="password-heading">Password Settings</h2>
+      </div>
+      <div class="panel-body">
+        <h3 class="password-title">Change Your Password</h3>
+        <form id="password-form" class="password-form">
+          <div class="field">
+            <label for="old-password">Old Password:<span class="required" aria-hidden="true">*</span></label>
+            <input id="old-password" type="password" name="oldPassword" autocomplete="current-password" placeholder="Old Password" required>
+          </div>
+          <div class="field">
+            <label for="new-password">New Password:<span class="required" aria-hidden="true">*</span></label>
+            <input id="new-password" type="password" name="newPassword" autocomplete="new-password" placeholder="New Password" required>
+          </div>
+          <div class="field">
+            <label for="confirm-password-input">Confirm New Password:<span class="required" aria-hidden="true">*</span></label>
+            <input id="confirm-password-input" type="password" name="confirmPassword" autocomplete="new-password" placeholder="Confirm New Password" required>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- Dialogs -->
+
+<dialog id="edit-personal" class="dialog" aria-labelledby="edit-personal-title">
+  <form method="dialog" class="dialog-form">
+    <div class="dialog-head">
+      <h2 id="edit-personal-title">Edit Personal Info</h2>
+    </div>
+    <div class="dialog-body">
+      <div class="form-card">
+        <h3 class="form-card-head">Personal Information</h3>
+        <div class="form-card-body">
+          <div class="field">
+            <label for="ep-last">Last Name:<span class="required" aria-hidden="true">*</span></label>
+            <input id="ep-last" name="lastName" placeholder="LAST NAME" required>
+          </div>
+          <div class="field">
+            <label for="ep-first">First Name:<span class="required" aria-hidden="true">*</span></label>
+            <input id="ep-first" name="firstName" placeholder="FIRST NAME" required>
+          </div>
+          <div class="field">
+            <label for="ep-middle">Middle Name:<span class="required" aria-hidden="true">*</span></label>
+            <input id="ep-middle" name="middleName" placeholder="MIDDLE NAME" required>
+          </div>
+          <div class="field" role="group" aria-labelledby="ep-dob-label">
+            <span id="ep-dob-label" class="field-label">Date of Birth:<span class="required" aria-hidden="true">*</span></span>
+            <div class="date-row">
+              <select aria-label="Month" name="dobMonth" data-list="months" data-placeholder="MONTH" required></select>
+              <select aria-label="Day" name="dobDay" data-list="days" data-placeholder="DAY" required></select>
+              <select aria-label="Year" name="dobYear" data-list="years" data-placeholder="YEAR" required></select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ep-address">Permanent Address:<span class="required" aria-hidden="true">*</span></label>
+            <div>
+              <textarea id="ep-address" name="address" placeholder="COMPLETE PERMANENT ADDRESS" required></textarea>
+              <p class="hint">No. | Street | Barangay | City/Town | Zip Code</p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ep-email">Email Address:<span class="required" aria-hidden="true">*</span></label>
+            <input id="ep-email" type="email" name="email" placeholder="student@gmail.com" required>
+          </div>
+          <div class="field">
+            <label for="ep-mobile">Mobile Number:<span class="required" aria-hidden="true">*</span></label>
+            <input id="ep-mobile" type="tel" name="mobile" placeholder="09xxxxxxxxx" required>
+          </div>
+          <div class="field">
+            <label for="ep-phone">Phone Number:<span class="required" aria-hidden="true">*</span></label>
+            <input id="ep-phone" type="tel" name="phone" placeholder="23xxxx" required>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dialog-foot">
+      <button type="button" class="btn btn-primary btn-caps" data-close>Close</button>
+      <button type="submit" class="btn btn-primary btn-caps">Save Changes</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="edit-educational" class="dialog" aria-labelledby="edit-educational-title">
+  <form method="dialog" class="dialog-form">
+    <div class="dialog-head">
+      <h2 id="edit-educational-title">Edit Educational Info</h2>
+      <button type="button" class="dialog-x" data-close aria-label="Close">
+        <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg>
+      </button>
+    </div>
+    <div class="dialog-body">
+      <div class="form-card">
+        <h3 class="form-card-head">Educational Information</h3>
+        <div class="form-card-body">
+          <div class="field">
+            <label for="ed-number">Student Number:<span class="required" aria-hidden="true">*</span></label>
+            <input id="ed-number" name="studentNumber" placeholder="XXXX-XXXXX-XX-X" required>
+          </div>
+          <div class="field" role="radiogroup" aria-labelledby="ed-status-label">
+            <span id="ed-status-label" class="field-label">Status:</span>
+            <div class="choice-group">
+              <label><input type="radio" name="status" value="undergraduate" checked> Undergraduate</label>
+              <label><input type="radio" name="status" value="graduate"> Graduate</label>
+            </div>
+          </div>
+          <div class="field" data-graduate-only hidden>
+            <label for="ed-course">Course:<span class="required" aria-hidden="true">*</span></label>
+            <select id="ed-course" name="course" required>
+              <option value="">SELECT</option>
+            </select>
+          </div>
+          <div class="field" data-graduate-only hidden>
+            <label for="ed-grad-year">Year Graduated:<span class="required" aria-hidden="true">*</span></label>
+            <select id="ed-grad-year" name="yearGraduated" data-list="years" data-placeholder="YEAR" required></select>
+          </div>
+          <div class="field">
+            <label for="ed-school-year">School Year Admitted:<span class="required" aria-hidden="true">*</span></label>
+            <select id="ed-school-year" name="yearAdmitted" data-list="years" data-placeholder="YEAR" required></select>
+          </div>
+          <div class="field" role="radiogroup" aria-labelledby="ed-admitted-label">
+            <span id="ed-admitted-label" class="field-label">Admitted As:<span class="required" aria-hidden="true">*</span></span>
+            <div class="choice-group">
+              <label><input type="radio" name="admittedAs" value="freshman" checked> Freshman</label>
+              <label><input type="radio" name="admittedAs" value="transferee"> Transferee</label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ed-course-admitted">Course When Admitted:<span class="required" aria-hidden="true">*</span></label>
+            <input id="ed-course-admitted" name="courseAdmitted" placeholder="COURSE" required>
+          </div>
+          <div class="field">
+            <label for="ed-hs">High School Graduated From:<span class="required" aria-hidden="true">*</span></label>
+            <div class="input-pair">
+              <input id="ed-hs" name="highSchool" placeholder="HIGH SCHOOL NAME" required>
+              <select aria-label="High school year graduated" name="hsYear" data-list="years" data-placeholder="YEAR" required></select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ed-elem">Elementary Graduated From:<span class="required" aria-hidden="true">*</span></label>
+            <div class="input-pair">
+              <input id="ed-elem" name="elementary" placeholder="ELEMENTARY NAME" required>
+              <select aria-label="Elementary year graduated" name="elemYear" data-list="years" data-placeholder="YEAR" required></select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dialog-foot">
+      <button type="button" class="btn btn-primary btn-caps" data-close>Close</button>
+      <button type="submit" class="btn btn-primary btn-caps">Save Changes</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="photo-requirements" class="dialog" aria-labelledby="photo-title">
+  <form method="dialog" class="dialog-form">
+    <div class="dialog-head">
+      <h2 id="photo-title">Photo Requirements</h2>
+    </div>
+    <div class="dialog-body">
+      <h3 class="section-label">Photo Guidelines</h3>
+      <div class="sample-photo" role="img" aria-label="Sample photo">SAMPLE PHOTO</div>
+      <ul class="guidelines">
+        <!-- Placeholder: replace with the official do's and don'ts -->
+        <li>List of do's and don'ts for photo and profile uploads</li>
+      </ul>
+      <div class="dialog-center">
+        <label class="btn btn-primary btn-caps">
+          Upload Photo
+          <input type="file" accept="image/*" hidden>
+        </label>
+      </div>
+    </div>
+    <div class="dialog-foot">
+      <button type="button" class="btn btn-primary btn-caps" data-close>Close</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="photo-zoom" class="dialog dialog-small" aria-labelledby="zoom-title">
+  <form method="dialog" class="dialog-form">
+    <div class="dialog-head">
+      <h2 id="zoom-title">Profile Photo</h2>
+    </div>
+    <div class="dialog-body">
+      <div class="zoom-photo">
+        <svg class="icon zoom-icon" aria-hidden="true"><use href="#icon-avatar"/></svg>
+      </div>
+    </div>
+    <div class="dialog-foot">
+      <button type="button" class="btn btn-primary btn-caps" data-close>Close</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="confirm-password" class="dialog dialog-small" aria-labelledby="confirm-title">
+  <form method="dialog" class="dialog-form">
+    <div class="dialog-head">
+      <h2 id="confirm-title">Change Password</h2>
+    </div>
+    <div class="dialog-body">
+      <p>Are you sure you want to change your password?</p>
+    </div>
+    <div class="dialog-foot">
+      <button type="button" class="btn btn-primary btn-caps" data-close>Cancel</button>
+      <button type="submit" value="confirm" class="btn btn-primary btn-caps">Confirm</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="password-success" class="dialog dialog-small" aria-labelledby="success-title">
+  <form method="dialog" class="dialog-form">
+    <div class="dialog-head">
+      <h2 id="success-title">Change Password</h2>
+    </div>
+    <div class="dialog-body">
+      <p><em>Your password has been changed successfully!</em></p>
+    </div>
+    <div class="dialog-foot">
+      <button type="button" class="btn btn-primary btn-caps" data-close>Close</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="js/app.js"></script>
+</body>
+</html>
