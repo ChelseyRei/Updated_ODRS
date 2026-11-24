@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>PUP ODRS – Register</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <a class="brand" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8">
+                <path d="M6 2h8l5 5v15H6z" />
+                <path d="M14 2v5h5M9 12h7M9 16h7" />
+            </svg><span>Online Document Request</span></a>
+        <nav class="nav">
+            <a class="btn blue" href="register.html">Register</a>
+            <a class="btn red" href="#login">Login</a>
+        </nav>
+    </header>
+
+    <main id="v-register">
+        <p style="margin:0">Use the form below to create a new account.</p>
+        <div class="title"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z" />
+                </svg></span>Register</div>
+        <div class="notice">For <b>Bachelor’s Degree</b> Students/Graduates of PUP Main Campus Only.</div>
+        <div class="cols">
+            <section class="card">
+                <h3>Account Information</h3>
+                <div class="in">
+                    <div class="fld"><label class="l" for="email">Email Address:<span class="req">*</span></label><input id="email" type="email"
+                            placeholder="Email" data-req>
+                        <div class="err">Enter a valid email address. Do not use another PUP student’s email.</div>
+                    </div>
+                    <div class="fld"><label class="l" for="email2">Confirm Email:<span class="req">*</span></label><input id="email2"
+                            type="email" placeholder="Repeat Email" data-req>
+                        <div class="err">Emails do not match.</div>
+                    </div>
+                    <div class="fld"><label class="l" for="pw">Password:<span class="req">*</span></label>
+                        <div class="pw"><input id="pw" type="password" placeholder="Password" data-req><button
+                                type="button" data-show="pw"></button></div>
+                        <div class="err">Use at least 8 characters.</div>
+                    </div>
+                    <div class="fld"><label class="l" for="pw2">Confirm Password:<span class="req">*</span></label>
+                        <div class="pw"><input id="pw2" type="password" placeholder="Repeat Password" data-req><button
+                                type="button" data-show="pw2"></button></div>
+                        <div class="err">Passwords do not match.</div>
+                    </div>
+                    <div class="fld"><label class="l" for="mob">Mobile Number:<span class="req">*</span></label><input id="mob" type="tel"
+                            placeholder="09XX XXX XXXX" data-req>
+                        <div class="err">Enter your mobile number.</div>
+                    </div>
+                    <div class="fld"><label class="l" for="tel">Phone Number:</label><input id="tel" type="tel"
+                            placeholder="Phone Number"></div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3>Personal Information</h3>
+                <div class="in">
+                    <div class="fld"><label class="l" for="ln">Last Name:<span class="req">*</span></small></label><input
+                            id="ln" type="text" placeholder="Last Name (while in PUP)" data-req>
+                        <div class="err">Required.</div>
+                    </div>
+                    <div class="fld"><label class="l" for="fn">First Name:<span class="req">*</span></label><input
+                            id="fn" type="text" placeholder="First Name" data-req>
+                        <div class="err">Required.</div>
+                    </div>
+                    <div class="fld"><label class="l" for="mn">Middle Name:<span class="req">*</span></label><input
+                            id="mn" type="text" placeholder="Middle Name (while in PUP)" data-req>
+                        <div class="err">Required unless you have no middle name.</div><label class="mid"><input
+                                type="checkbox" id="nomid"> I don’t have a middle name</label>
+                    </div>
+                    <div class="fld"><label class="l">Date of Birth:<span class="req">*</span></label>
+                        <div class="row3"><select id="mo" data-req>
+                                <option value="">Month</option>
+                            </select><select id="dy" data-req>
+                                <option value="">Day</option>
+                            </select><select id="yr" data-req>
+                                <option value="">Year</option>
+                            </select></div>
+                        <div class="err">Select your complete birth date.</div>
+                    </div>
+                    <div class="fld"><label class="l" for="addr">Permanent Address:<span class="req">*</span></label><textarea id="addr" rows="3"
+                            placeholder="Permanent Address" data-req></textarea>
+                        <div class="err">Required.</div><small style="color:var(--muted);font-size:11px">No. | Street |
+                            Barangay | City/Town | Zip Code</small>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3>Educational Information</h3>
+                <div class="in">
+                    <div class="sub">Registrar:<span class="req">*</span></div>
+                    <div class="opts">
+                        <label><input type="radio" name="reg" checked> <span>Bachelor’s Degree / Undergrad Courses
+                                <small>(Traditional &amp; non-iTech)</small></span></label>
+                        <label><input type="radio" name="reg"> <span>Open University <small>(register at
+                                    odrs.pup.edu.ph/openu)</small></span></label>
+                        <label><input type="radio" name="reg"> <span>Graduate School <small>(request to your registrar
+                                    manually)</small></span></label>
+                        <label><input type="radio" name="reg"> <span>iTech <small>(request to your registrar
+                                    manually)</small></span></label>
+                        <label><input type="radio" name="reg"> <span>College of Law <small>(request to your registrar
+                                    manually)</small></span></label>
+                    </div>
+                    <hr>
+                    <div class="sub">Program Status:<span class="req">*</span></div>
+                    <div class="opts" style="grid-template-columns:1fr 1fr"><label><input type="radio" name="ps"
+                                value="g" checked> <span>Graduated <small>(finished
+                                    degree)</small></span></label><label><input type="radio" name="ps" value="n">
+                            <span>Not Graduate <small>(unfinished)</small></span></label></div>
+                    <div id="gradbox">
+                        <div class="row2">
+                            <div class="fld"><label class="l">Program when Graduated:<span class="req">*</span></label><select id="pg" data-req>
+                                    <option value="">-Select Program-</option>
+                                </select>
+                                <div class="err">Required.</div>
+                            </div>
+                            <div class="fld"><label class="l">Year Graduated:<span class="req">*</span></label><select id="yg" data-req>
+                                    <option value="">Year</option>
+                                </select>
+                                <div class="err">Required.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="fld"><label class="l">Year Admitted in PUP:<span class="req">*</span></label><select id="ya" data-req>
+                                <option value="">Year</option>
+                            </select>
+                            <div class="err">Required.</div>
+                        </div>
+                        <div class="fld"><label class="l">Admitted as:<span class="req">*</span></label>
+                            <div class="opts" style="margin:6px 0 0"><label><input type="radio" name="adm" checked>
+                                    Freshman</label><label><input type="radio" name="adm"> Transferee</label></div>
+                        </div>
+                    </div>
+                    <div class="fld"><label class="l">Program when Admitted:<span class="req">*</span></label><select id="pa" data-req>
+                            <option value="">-Select Program-</option>
+                        </select>
+                        <div class="err">Required.</div>
+                    </div>
+                    <div class="fld"><label class="l" for="sn">Student Number:<span class="req">*</span></label><input id="sn" type="text"
+                            placeholder="e.g. 2025-00000-MN-0" data-req>
+                        <div class="err">Required.</div>
+                    </div>
+                    <div class="row2" style="grid-template-columns:1.6fr 1fr">
+                        <div class="fld"><label class="l">High School graduated from:<span class="req">*</span></label><input id="hs" type="text"
+                                placeholder="High School" data-req>
+                            <div class="err">Required.</div>
+                        </div>
+                        <div class="fld"><label class="l">Year:<span class="req">*</span></label><select id="hy" data-req>
+                                <option value="">-Year-</option>
+                            </select>
+                            <div class="err">Required.</div>
+                        </div>
+                    </div>
+                    <div class="row2" style="grid-template-columns:1.6fr 1fr">
+                        <div class="fld" style="margin:0"><label class="l">Elementary graduated from:<span class="req">*</span></label><input
+                                id="el" type="text" placeholder="Elementary" data-req>
+                            <div class="err">Required.</div>
+                        </div>
+                        <div class="fld" style="margin:0"><label class="l">Year:<span class="req">*</span></label><select id="ey" data-req>
+                                <option value="">-Year-</option>
+                            </select>
+                            <div class="err">Required.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="checks">
+            <label><input type="checkbox" id="c1"> <b>I’m a student/graduate of PUP Main Campus</b></label>
+            <label><input type="checkbox" id="c2"> <span><b>Please check if this is your first and only ODRS
+                        account.</b> Else, <a class="link" href="#login">CLICK HERE</a> to recover your
+                    account.</span></label>
+            <label><input type="checkbox" id="c3"> <span><b>By using this service, you understood and agree to the PUP
+                        Online Services <a class="link" href="#register">Terms of Use</a> and <a class="link"
+                            href="#register">Privacy Statement</a></b></span></label>
+        </div>
+        <button class="btn green" id="submit" type="button">SUBMIT</button>
+    </main>
+
+    <div id="modal-slot"></div>
+    <div class="toast" id="toast"></div>
+    <footer>© 2026 Polytechnic University of the Philippines · Prototype for redesign proposal</footer>
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
