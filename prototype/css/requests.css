@@ -504,13 +504,19 @@ button.close { -webkit-appearance: none; padding: 0; cursor: pointer; background
 .container-fluid > .navbar-header { margin-right: -15px; margin-left: -15px; }
 
 .navbar-brand {
-    display: block;
+    display: flex;
+    align-items: center;
     float: left;
     height: 50px;
-    padding: 15px;
+    padding: 0 15px;
+    gap: 6px;
     font-size: 20px !important;
     line-height: 20px;
     font-weight: 700;
+}
+
+.navbar-brand img {
+    display: block;
 }
 .navbar-brand:hover, .navbar-brand:focus { text-decoration: none; }
 .navbar-default .navbar-brand { color: #5c5c5c; }
@@ -985,8 +991,22 @@ footer {
         font-size: 14px !important;
     }
 
-   
-    .navbar-brand { padding: 15px 10px; font-size: 15px; }
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        float: left;
+        height: 50px;
+        padding: 0 15px;
+        gap: 6px;
+        font-size: 20px !important;
+        line-height: 20px;
+        font-weight: 700;
+    }
+
+    .navbar-brand img {
+        display: block;
+    }
+
     .navbar-collapse .navbar-btn { margin: 8px 10px; }
 
  
