@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Document Request System interface demo">
+    <title>Online Document Request System</title>
+    <link rel="stylesheet" href="./css/new-request.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="./css/requests.css" rel="stylesheet">
+    <link href="./css/new-request.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation"
+            style="border-bottom: solid 2px #808080; box-shadow: 1px 1px 5px">
+            <div class="container">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                            <img src="./assets/icons/system-logo-icon.svg" alt="Logo" style="height: 30px; filter: brightness(0) saturate(100%) invert(11%) sepia(83%) saturate(4736%) hue-rotate(354deg) brightness(62%) contrast(113%);">
+                            <span>Online Document Request</span>
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <button type="button" class="btn btn-danger navbar-btn">
+                                <img src="./assets/icons/logout-icon.svg" alt="Logout"
+                                    style="height: 20px; margin-right: 5px;  filter: brightness(0) invert(1);">
+                                Logout</button>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-shell">
+        <br><br><br>
+        <nav class="main-nav" aria-label="Main navigation">
+            <div class="col-sm-12 col-md-12" style="margin-top:-20px; margin-bottom:-3px">
+                <ul class="nav nav-pills panel">
+                    <li><a href="settings.html">
+                            <span class="account-icon"></span>
+                            Account Settings</a></li>
+                    <li class="active"><a href="#"><span class="glyphicon glyphicon-plus-sign"></span> New Request</a>
+                    </li>
+                    <li><a href="requests.html">
+                            <span class="glyphicon glyphicon-list-alt"></span>
+                            Requests</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="col-sm-12 col-md-12">
+            <section class="request-panel" id="new-request">
+                <div class="panel-heading">New Request</div>
+                <form id="requestForm">
+                    <div class="form-content">
+                        <div class="wide-field">
+                            <label class="field-label" for="program">Program/Course:<b>*</b></label>
+                            <select id="program" disabled onchange="this.disabled = true" required>
+                                <option value=""></option>
+                                <option value="319">ACCOUNTING</option>
+                                <option value="320">ACCOUNTING MAJOR</option>
+                                <option value="321">ADVERTISING</option>
+                                <option value="322">ADVERTISING MAJOR</option>
+                                <option value="323">ASSOCIATE IN BUSINESS ADMINISTRATION</option>
+                                <option value="324">ASSOCIATE IN COMMERCE</option>
+                                <option value="325">ASSOCIATE IN COMMERCE ACCOUNTING</option>
+                                <option value="326">ASSOCIATE IN COMMERCE SECRETARIAL</option>
+                                <option value="327">ASSOCIATE IN COMMERCE TWO-YEAR ACCOUNTING</option>
+                                <option value="328">ASSOCIATE IN COMMERCE TWO-YEAR BASIC</option>
+                                <option value="329">ASSOCIATE IN COMMERCE TWO-YEAR RETAIL MERCHANDISING
+                                </option>
+                                <option value="330">ASSOCIATE IN COMMERCE TWO-YEAR SECRETARIAL</option>
+                                <option value="331">ASSOCIATE IN COMMERCIAL SCIENCE</option>
+                                <option value="332">BACHELOR IN ACCOUNTANCY</option>
+                                <option value="333">BACHELOR IN ADVERTISING AND PUBLIC RELATIONS
+                                </option>
+                                <option value="334">BACHELOR IN AGRI-BUSINESS MANAGEMENT</option>
+                                <option value="335">BACHELOR IN APPLIED ECONOMICS</option>
+                                <option value="336">BACHELOR IN APPLIED STATISTICS</option>
+                                <option value="337">BACHELOR IN BANKING AND FINANCE</option>
+                                <option value="338">BACHELOR IN BANKING AND FINANCE - ACCOUNTING
+                                </option>
+                                <option value="339">BACHELOR IN BANKING AND FINANCE-MINOR IN SERVICE
+                                    MANAGEMENT</option>
+                                <option value="341">BACHELOR IN BROADCAST COMMUNICATION</option>
+                                <option value="342">BACHELOR IN BROADCAST JOURNALISM</option>
+                                <option value="343">BACHELOR IN BUSINESS ADMINISTRATION</option>
+                                <option value="344">BACHELOR IN BUSINESS ADMINISTRATION MAJOR IN
+                                    MANAGEMENT</option>
+                                <option value="345">BACHELOR IN BUSINESS ADMINISTRATION MAJOR IN
+                                    MANAGEMENT MINOR IN MARKETING</option>
+                                <option value="346">BACHELOR IN BUSINESS ADMINISTRATION MAJOR IN
+                                    MARKETING</option>
+                                <option value="347">BACHELOR IN BUSINESS ADMINISTRATION MAJOR IN
+                                    MARKETING MINOR IN ADVERTISING/PR</option>
+                                <option value="348">BACHELOR IN BUSINESS EDUCATION</option>
+                                <option value="349">BACHELOR IN BUSINESS JOURNALISM</option>
+                                <option value="350">BACHELOR IN BUSINESS MANAGEMENT - AD/PR</option>
+                                <option value="351">BACHELOR IN BUSINESS MANAGEMENT - MAR</option>
+                                <option value="352">BACHELOR IN BUSINESS MANAGEMENT MAJOR IN ADVERTISING
+                                    AND PUBLIC RELATIONS</option>
+                                <option value="354">BACHELOR IN BUSINESS MANAGEMENT MAJOR IN EXPORT
+                                    TRADE</option>
+                                <option value="355">BACHELOR IN BUSINESS MANAGEMENT MAJOR IN MANAGEMENT
+                                </option>
+                                <option value="356">BACHELOR IN BUSINESS MANAGEMENT MAJOR IN MARKETING
+                                </option>
+                                <option value="357">BACHELOR IN BUSINESS TEACHER EDUCATION</option>
+                                <option value="359">BACHELOR IN BUSINESS TEACHER EDUCATION MAJOR IN
+                                    BUSINESS TECHNOLOGY</option>
+                                <option value="358">BACHELOR IN BUSINESS TEACHER EDUCATION-MAJOR IN
+                                    BUSINESS TEACHER AND LIVELIHOOD EDUCATION</option>
+                                <option value="360">BACHELOR IN BUSINESS TEACHER EDUCATION-MAJOR IN
+                                    INFORMATION TECHNOLOGY EDUCATION</option>
+                                <option value="361">BACHELOR IN CLINICAL PSYCHOLOGY</option>
+                                <option value="362">BACHELOR IN COMMERCE MAJOR IN ECONOMICS</option>
+                                <option value="363">BACHELOR IN COMMUNICATION RESEARCH</option>
+                                <option value="364">BACHELOR IN COMPUTER DATA PROCESSING</option>
+                                <option value="365">BACHELOR IN COMPUTER DATA PROCESSING MANAGEMENT
+                                </option>
+                                <option value="366">BACHELOR IN COMPUTER ENGINEERING</option>
+                                <option value="367">BACHELOR IN COOPERATIVE ADMINISTRATION</option>
+                                <option value="368">BACHELOR IN COOPERATIVE MANAGEMENT</option>
+                                <option value="369">BACHELOR IN COOPERATIVES</option>
+                                <option value="370">BACHELOR IN COOPERATIVES - BUSINESS MANAGEMENT
+                                </option>
+                                <option value="632">BACHELOR IN COOPERATIVES - COOPERATIVE BUSINESS
+                                    MANAGEMENT</option>
+                                <option value="371">BACHELOR IN COOPERATIVES - EDUCATION AND COMMUNITY
+                                    DEVELOPMENT</option>
+                                <option value="372">BACHELOR IN COOPERATIVES - FINANCIAL MANAGEMENT AND
+                                    ACCOUNTING</option>
+                                <option value="373">BACHELOR IN COOPERATIVES WITH OPTION IN COOPERATIVE
+                                    BUSINESS MANAGEMENT</option>
+                                <option value="374">BACHELOR IN COOPERATIVES WITH OPTION IN COOPERATIVE
+                                    EDUCATION AND COMMUNITY DEVELOPMENT</option>
+                                <option value="375">BACHELOR IN COOPERATIVES WITH OPTION IN COOPERATIVE
+                                    FINANCIAL MANAGEMENT AND ACCOUNTING</option>
+                                <option value="376">BACHELOR IN ELECTRICAL ENGINEERING</option>
+                                <option value="377">BACHELOR IN ELECTRONICS ENGINEERING</option>
+                                <option value="379">BACHELOR IN ENTREPRENEURIAL MANAGEMENT</option>
+                                <option value="380">BACHELOR IN FOOD TECHNOLOGY</option>
+                                <option value="381">BACHELOR IN HOTEL AND RESTAURANT MANAGEMENT</option>
+                                <option value="382">BACHELOR IN HUMAN BEHAVIOR AND TECHNOLOGY</option>
+                                <option value="383">BACHELOR IN HUMAN BEHAVIOR TECHNOLOGY</option>
+                                <option value="751">Bachelor in Human Services</option>
+                                <option value="384">BACHELOR IN INDUSTRIAL COMMUNICATION ENGINEERING
+                                </option>
+                                <option value="385">BACHELOR IN INDUSTRIAL PSYCHOLOGY</option>
+                                <option value="386">BACHELOR IN INDUSTRIAL TECHNOLOGY</option>
+                                <option value="387">BACHELOR IN INFORMATION TECHNOLOGY</option>
+                                <option value="388">BACHELOR IN INTERNATIONAL TRADE MANAGEMENT</option>
+                                <option value="390">BACHELOR IN JOURNALISM</option>
+                                <option value="392">BACHELOR IN LIBRARY AND INFORMATION SCIENCE</option>
+                                <option value="393">BACHELOR IN LIBRARY ARTS</option>
+                                <option value="394">BACHELOR IN LIBRARY SCIENCE</option>
+                                <option value="395">BACHELOR IN OFFICE ADMINISTRATION</option>
+                                <option value="396">BACHELOR IN OFFICE ADMINISTRATION (NON-TRANDITIONAL
+                                    STUDY)</option>
+                                <option value="397">BACHELOR IN OFFICE ADMINISTRATION MAJOR IN CORPORATE
+                                    TRANSCRIPTION</option>
+                                <option value="398">BACHELOR IN OFFICE ADMINISTRATION MAJOR IN LEGAL
+                                    TRANSCRIPTION</option>
+                                <option value="399">BACHELOR IN OFFICE ADMINISTRATION MAJOR IN MEDICAL
+                                    TRANSCRIPTION</option>
+                                <option value="400">BACHELOR IN PHYSICAL EDUCATION</option>
+                                <option value="401">BACHELOR IN POLITICAL ECONOMY</option>
+                                <option value="402">BACHELOR IN POLITICAL SCIENCE</option>
+                                <option value="403">BACHELOR IN POLITICAL SCIENCE MAJOR IN INTERNATIONAL
+                                    RELATIONS</option>
+                                <option value="404">BACHELOR IN POLITICAL SCIENCE SPECIALIZED IN
+                                    INTERNATIONAL RELATIONS</option>
+                                <option value="405">BACHELOR IN POLITICAL SCIENCE WITH OPTION IN
+                                    INTERNATIONAL RELATIONS</option>
+                                <option value="406">BACHELOR IN POLITICAL SCIENCE WITH OPTION IN PUBLIC
+                                    ADMINISTRATION</option>
+                                <option value="408">BACHELOR IN PUBLIC ADMINISTRATION</option>
+                                <option value="409">BACHELOR IN PUBLIC ADMINISTRATION &amp; GOVERNANCE
+                                </option>
+                                <option value="410">BACHELOR IN SECONDARY EDUCATION</option>
+                                <option value="411">BACHELOR IN SECONDARY EDUCATION MAJOR IN ENGLISH
+                                </option>
+                                <option value="412">BACHELOR IN SECONDARY EDUCATION MAJOR IN FILIPINO
+                                </option>
+                                <option value="413">BACHELOR IN SECONDARY EDUCATION MAJOR IN MATHEMATICS
+                                </option>
+                                <option value="414">BACHELOR IN SECONDARY EDUCATION MAJOR IN SOCIAL
+                                    STUDIES</option>
+                                <option value="415">BACHELOR IN SECRETARIAL SCIENCE</option>
+                                <option value="416">BACHELOR IN TOURISM</option>
+                                <option value="417">BACHELOR IN TRANSPORTATION MANAGEMENT</option>
+                                <option value="418">BACHELOR OF ACCOUNTING (HONOR)</option>
+                                <option value="420">BACHELOR OF ARTS IN BROADCAST COMMUNICATION</option>
+                                <option value="636">BACHELOR OF ARTS IN BROADCASTING</option>
+                                <option value="656">BACHELOR OF ARTS IN BROADCASTING(VOID)</option>
+                                <option value="421">BACHELOR OF ARTS IN COMMUNICATION RESEARCH</option>
+                                <option value="422">BACHELOR OF ARTS IN DEVELOPMENT COMMUNICATIONS
+                                </option>
+                                <option value="423">BACHELOR OF ARTS IN ECONOMICS</option>
+                                <option value="424">BACHELOR OF ARTS IN ENGLISH</option>
+                                <option value="637">BACHELOR OF ARTS IN ENGLISH LANGUAGE STUDIES
+                                </option>
+                                <option value="427">BACHELOR OF ARTS IN ENGLISH MINOR IN INSTRUCTIONAL
+                                    ARTS</option>
+                                <option value="428">BACHELOR OF ARTS IN ENGLISH MINOR IN MASS
+                                    COMMUNICATION</option>
+                                <option value="429">BACHELOR OF ARTS IN ENGLISH OPTION IN FOREIGN
+                                    LANGUAGE</option>
+                                <option value="430">BACHELOR OF ARTS IN ENGLISH OPTION IN INSTRUCTIONAL
+                                    ARTS</option>
+                                <option value="425">BACHELOR OF ARTS IN ENGLISH-ENG-ED</option>
+                                <option value="426">BACHELOR OF ARTS IN ENGLISH-ENG-IA</option>
+                                <option value="431">BACHELOR OF ARTS IN FILIPINO</option>
+                                <option value="432">BACHELOR OF ARTS IN FILIPINOLOGY</option>
+                                <option value="433">BACHELOR OF ARTS IN HISTORY</option>
+                                <option value="652">BACHELOR OF ARTS IN INTERNATIONAL STUDIES</option>
+                                <option value="434">BACHELOR OF ARTS IN JOURNALISM</option>
+                                <option value="639">BACHELOR OF ARTS IN LITERARY AND CULTURAL STUDIES
+                                </option>
+                                <option value="435">BACHELOR OF ARTS IN MASS COMMUNICATION</option>
+                                <option value="657">BACHELOR OF ARTS IN PHILIPPINE STUDIES</option>
+                                <option value="436">BACHELOR OF ARTS IN PHILOSOPHY</option>
+                                <option value="437">BACHELOR OF ARTS IN POLITICAL ECONOMY</option>
+                                <option value="438">BACHELOR OF ARTS IN POLITICAL SCIENCE</option>
+                                <option value="439">BACHELOR OF ARTS IN POLITICAL SCIENCE WITH OPTION IN
+                                    INTERNATIONAL RELATIONS</option>
+                                <option value="440">BACHELOR OF ARTS IN POLITICAL SCIENCE WITH OPTION IN
+                                    PUBLIC ADMINISTRATION</option>
+                                <option value="441">BACHELOR OF ARTS IN PSYCHOLOGY</option>
+                                <option value="442">BACHELOR OF ARTS IN PUBLIC ADMINISTRATION</option>
+                                <option value="643">BACHELOR OF ARTS IN SOCIOLOGY</option>
+                                <option value="443">BACHELOR OF ARTS IN THEATER ARTS</option>
+                                <option value="444">BACHELOR OF ARTS ON BROADCAST COMMUNICATION</option>
+                                <option value="445">BACHELOR OF BUSINESS MANAGEMENT</option>
+                                <option value="647">BACHELOR OF BUSINESS TECHNOLOGY AND LIVELIHOOD
+                                    EDUCATION MAJOR IN HOME ECONOMICS</option>
+                                <option value="649">BACHELOR OF BUSINESS TECHNOLOGY AND LIVELIHOOD
+                                    EDUCATION MAJOR IN INDUSTRIAL ARTS</option>
+                                <option value="648">BACHELOR OF BUSINESS TECHNOLOGY AND LIVELIHOOD
+                                    EDUCATION MAJOR IN INFORMATION AND COMMUNICATION TECHNOLOGY</option>
+                                <option value="645">BACHELOR OF EARLY CHILDHOOD EDUCATION</option>
+                                <option value="378">BACHELOR OF ELEMENTARY EDUCATION</option>
+                                <option value="651">BACHELOR OF PERFORMING ARTS</option>
+                                <option value="447">BACHELOR OF PHYSICAL EDUCATION</option>
+                                <option value="658">BACHELOR OF PUBLIC ADMINISTRATION</option>
+                                <option value="659">BACHELOR OF PUBLIC ADMINISTRATION MAJOR IN PUBLIC
+                                    FINANCIAL MANAGEMENT </option>
+                                <option value="448">BACHELOR OF SCIENCE IN ACCOUNTANCY</option>
+                                <option value="450">BACHELOR OF SCIENCE IN AGRI-BUSINESS MANAGEMENT
+                                </option>
+                                <option value="451">BACHELOR OF SCIENCE IN APPLIED ECONOMICS</option>
+                                <option value="452">BACHELOR OF SCIENCE IN APPLIED MATHEMATICS</option>
+                                <option value="453">BACHELOR OF SCIENCE IN APPLIED MATHEMATICS MAJOR IN
+                                    ACTUARIAL MATHEMATICS</option>
+                                <option value="454">BACHELOR OF SCIENCE IN APPLIED STATISTICS</option>
+                                <option value="455">BACHELOR OF SCIENCE IN ARCHITECTURE</option>
+                                <option value="660">BACHELOR OF SCIENCE IN ARCHITECTURE (SECOND DEGREE)
+                                </option>
+                                <option value="456">BACHELOR OF SCIENCE IN BANKING AND FINANCE - BSBF
+                                </option>
+                                <option value="457">BACHELOR OF SCIENCE IN BANKING AND FINANCE -
+                                    BSBF-BANK</option>
+                                <option value="458">BACHELOR OF SCIENCE IN BANKING AND FINANCE - BSBF-BK
+                                </option>
+                                <option value="459">BACHELOR OF SCIENCE IN BANKING AND FINANCE -
+                                    BSBF-FIN</option>
+                                <option value="460">BACHELOR OF SCIENCE IN BANKING AND FINANCE - BSBF-FN
+                                </option>
+                                <option value="461">BACHELOR OF SCIENCE IN BIOLOGY</option>
+                                <option value="463">BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION
+                                </option>
+                                <option value="640">BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION MAJOR
+                                    IN FINANCIAL MANAGEMENT</option>
+                                <option value="464">BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION MAJOR
+                                    IN HUMAN RESOURCE DEVELOPMENT MANAGEMENT</option>
+                                <option value="630">BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION MAJOR
+                                    IN HUMAN RESOURCE DEVELOPMENT MANAGEMENT MINOR IN SERVICE MANAGEMENT
+                                    FOR BUSINESS PROCESS OUTSOURCING</option>
+                                <option value="465">BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION MAJOR
+                                    IN HUMAN RESOURCE MANAGEMENT</option>
+                                <option value="466">BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION MAJOR
+                                    IN MARKETING MANAGEMENT</option>
+                                <option value="467">BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION MAJOR
+                                    IN MARKETING MANAGEMENT (FOREIGN STUDENT)</option>
+                                <option value="633">BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION MAJOR
+                                    IN MARKETING MANAGEMENT MINOR IN SERVICE MANAGEMENT</option>
+                                <option value="468">BACHELOR OF SCIENCE IN BUSINESS EDUCATION - BSBE
+                                </option>
+                                <option value="469">BACHELOR OF SCIENCE IN BUSINESS EDUCATION - BSBE-RM
+                                </option>
+                                <option value="470">BACHELOR OF SCIENCE IN BUSINESS EDUCATION -
+                                    SECRETARIAL</option>
+                                <option value="471">BACHELOR OF SCIENCE IN CHEMISTRY</option>
+                                <option value="472">BACHELOR OF SCIENCE IN CIVIL ENGINEERING</option>
+                                <option value="473">BACHELOR OF SCIENCE IN CIVIL ENGINEERING SPECIALIZED
+                                    IN CONSTRUCTION ENGINEERING MANAGEMENT</option>
+                                <option value="474">BACHELOR OF SCIENCE IN CIVIL ENGINEERING SPECIALIZED
+                                    IN STRUCTURAL ENGINEERING</option>
+                                <option value="475">BACHELOR OF SCIENCE IN CIVIL ENGINEERING SPECIALIZED
+                                    IN TRANSPORTATION ENGINEERING</option>
+                                <option value="476">BACHELOR OF SCIENCE IN CLINICAL PSYCHOLOGY</option>
+                                <option value="477">BACHELOR OF SCIENCE IN COMMERCE - BSC-ENT</option>
+                                <option value="478">BACHELOR OF SCIENCE IN COMMERCE BSC</option>
+                                <option value="479">BACHELOR OF SCIENCE IN COMMERCE MAJOR IN ACCOUNTING
+                                </option>
+                                <option value="480">BACHELOR OF SCIENCE IN COMMERCE MAJOR IN ADVERTISING
+                                </option>
+                                <option value="481">BACHELOR OF SCIENCE IN COMMERCE MAJOR IN BUSINESS
+                                    ADMINISTRATION</option>
+                                <option value="482">BACHELOR OF SCIENCE IN COMMERCE MAJOR IN COOPERATIVE
+                                </option>
+                                <option value="483">BACHELOR OF SCIENCE IN COMMERCE MAJOR IN ECONOMICS
+                                </option>
+                                <option value="484">BACHELOR OF SCIENCE IN COMMERCE MAJOR IN ECONOMICS -
+                                    FINANCE</option>
+                                <option value="485">BACHELOR OF SCIENCE IN COMMERCE MAJOR IN MANAGEMENT
+                                </option>
+                                <option value="486">BACHELOR OF SCIENCE IN COMMERCE MAJOR IN MARKETING
+                                </option>
+                                <option value="487">BACHELOR OF SCIENCE IN COMMERCE MAJOR IN SECRETARIAL
+                                </option>
+                                <option value="488">BACHELOR OF SCIENCE IN COMPUTER ENGINEERING</option>
+                                <option value="489">BACHELOR OF SCIENCE IN COMPUTER ENGINEERING -
+                                    BSCoE-BAK</option>
+                                <option selected="selected" value="490">BACHELOR OF SCIENCE IN COMPUTER
+                                    SCIENCE</option>
+                                <option value="650">BACHELOR OF SCIENCE IN COOPERATIVES</option>
+                                <option value="655">BACHELOR OF SCIENCE IN COOPERATIVES - COOPERATIVE
+                                    EDUCATION &amp; COMMUNITY DEVELOPMENT</option>
+                                <option value="654">BACHELOR OF SCIENCE IN COOPERATIVES - COOPERATIVE
+                                    SOCIAL ENTERPRISE MANAGEMENT</option>
+                                <option value="491">BACHELOR OF SCIENCE IN CRIMINOLOGY</option>
+                                <option value="492">BACHELOR OF SCIENCE IN ECONOMICS</option>
+                                <option value="501">BACHELOR OF SCIENCE IN ECONOMICS MAJOR IN BUSINESS
+                                    ECONOMICS</option>
+                                <option value="502">BACHELOR OF SCIENCE IN ELECTRICAL ENGINEERING
+                                </option>
+                                <option value="503">BACHELOR OF SCIENCE IN ELECTRONICS AND
+                                    COMMUNICATIONS ENGINEERING</option>
+                                <option value="504">BACHELOR OF SCIENCE IN ELECTRONICS ENGINEERING
+                                </option>
+                                <option value="505">BACHELOR OF SCIENCE IN ENTREPRENEURIAL MANAGEMENT
+                                </option>
+                                <option value="506">BACHELOR OF SCIENCE IN ENTREPRENEURIAL MANAGEMENT
+                                    MAJOR IN HUMAN RESOURCE DEVELOPMENT MANAGEMENT</option>
+                                <option value="507">BACHELOR OF SCIENCE IN ENTREPRENEURIAL MANAGEMENT
+                                    MAJOR IN MARKETING MANAGEMENT</option>
+                                <option value="508">BACHELOR OF SCIENCE IN ENTREPRENEURSHIP</option>
+                                <option value="661">BACHELOR OF SCIENCE IN ENVIRONMENTAL PLANNING
+                                </option>
+                                <option value="662">BACHELOR OF SCIENCE IN ENVIRONMENTAL PLANNING
+                                    (SECOND DEGREE)</option>
+                                <option value="641">BACHELOR OF SCIENCE IN EXERCISE AND SPORTS SCIENCE
+                                </option>
+                                <option value="509">BACHELOR OF SCIENCE IN FOOD TECHNOLOGY</option>
+                                <option value="510">BACHELOR OF SCIENCE IN HOSPITALITY MANAGEMENT
+                                </option>
+                                <option value="511">BACHELOR OF SCIENCE IN HOTEL AND RESTAURANT
+                                    MANAGEMENT</option>
+                                <option value="512">BACHELOR OF SCIENCE IN HOTEL RESTAURANT MANAGEMENT
+                                </option>
+                                <option value="513">BACHELOR OF SCIENCE IN INDUSTRIAL AND ORGANIZATIONAL
+                                    PSYCHOLOGY</option>
+                                <option value="514">BACHELOR OF SCIENCE IN INDUSTRIAL COMMUNICATION
+                                    ENGINEERING</option>
+                                <option value="515">BACHELOR OF SCIENCE IN INDUSTRIAL ENGINEERING
+                                </option>
+                                <option value="516">BACHELOR OF SCIENCE IN INDUSTRIAL PSYCHOLOGY
+                                </option>
+                                <option value="517">BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY
+                                </option>
+                                <option value="518">BACHELOR OF SCIENCE IN INTERIOR DESIGN</option>
+                                <option value="663">BACHELOR OF SCIENCE IN INTERIOR DESIGN (SECOND
+                                    DEGREE)</option>
+                                <option value="638">BACHELOR OF SCIENCE IN MANAGEMENT ACCOUNTING
+                                </option>
+                                <option value="519">BACHELOR OF SCIENCE IN MATHEMATICS</option>
+                                <option value="523">BACHELOR OF SCIENCE IN MATHEMATICS - EDUCATION
+                                </option>
+                                <option value="520">BACHELOR OF SCIENCE IN MATHEMATICS - MATH-CP
+                                </option>
+                                <option value="521">BACHELOR OF SCIENCE IN MATHEMATICS - MATH-CT
+                                </option>
+                                <option value="522">BACHELOR OF SCIENCE IN MATHEMATICS - MATH-SM
+                                </option>
+                                <option value="524">BACHELOR OF SCIENCE IN MATHEMATICS MAJOR IN COMPUTER
+                                    PROGRAMMING</option>
+                                <option value="525">BACHELOR OF SCIENCE IN MATHEMATICS MINOR IN COMPUTER
+                                    APPLICATION</option>
+                                <option value="526">BACHELOR OF SCIENCE IN MATHEMATICS MINOR IN COMPUTER
+                                    APPLICATIONS</option>
+                                <option value="527">BACHELOR OF SCIENCE IN MATHEMATICS MINOR IN
+                                    EDUCATION</option>
+                                <option value="528">BACHELOR OF SCIENCE IN MATHEMATICS MINOR IN
+                                    MATHEMATICS EDUCATION</option>
+                                <option value="529">BACHELOR OF SCIENCE IN MATHEMATICS WITH OPTION IN
+                                    COLLEGE TEACHING</option>
+                                <option value="530">BACHELOR OF SCIENCE IN MATHEMATICS WITH OPTION IN
+                                    COMPUTER APPLICATION</option>
+                                <option value="531">BACHELOR OF SCIENCE IN MATHEMATICS WITH OPTION IN
+                                    COMPUTER PROGRAMMING</option>
+                                <option value="532">BACHELOR OF SCIENCE IN MATHEMATICS WITH OPTION IN
+                                    TEACHING</option>
+                                <option value="533">BACHELOR OF SCIENCE IN MECHANICAL ENGINEERING
+                                </option>
+                                <option value="534">BACHELOR OF SCIENCE IN NUTRITION AND DIETETICS
+                                </option>
+                                <option value="535">BACHELOR OF SCIENCE IN OFFICE ADMINISTRATION
+                                </option>
+                                <option value="536">BACHELOR OF SCIENCE IN OFFICE ADMINISTRATION MAJOR
+                                    IN CORPORATE TRANSCRIPTION</option>
+                                <option value="537">BACHELOR OF SCIENCE IN OFFICE ADMINISTRATION MAJOR
+                                    IN LEGAL TRANSCRIPTION</option>
+                                <option value="538">BACHELOR OF SCIENCE IN OFFICE ADMINISTRATION MAJOR
+                                    IN MEDICAL TRANSCRIPTION</option>
+                                <option value="539">BACHELOR OF SCIENCE IN PHYSICS</option>
+                                <option value="540">BACHELOR OF SCIENCE IN POLITICAL ECONOMY</option>
+                                <option value="541">BACHELOR OF SCIENCE IN PSYCHOLOGY</option>
+                                <option value="644">BACHELOR OF SCIENCE IN RAILWAY ENGINEERING</option>
+                                <option value="542">BACHELOR OF SCIENCE IN RAILWAY ENGINEERING &amp;
+                                    MANAGEMENT</option>
+                                <option value="543">BACHELOR OF SCIENCE IN SECONDARY EDUCATION MAJOR IN
+                                    ENGLISH</option>
+                                <option value="544">BACHELOR OF SCIENCE IN SECONDARY EDUCATION MAJOR IN
+                                    MATHEMATICS</option>
+                                <option value="750">Bachelor of Science in Social Work</option>
+                                <option value="545">BACHELOR OF SCIENCE IN SOCIOLOGY</option>
+                                <option value="546">BACHELOR OF SCIENCE IN SOCIOLOGY (NON-TRADITIONAL
+                                    STUDY)</option>
+                                <option value="642">BACHELOR OF SCIENCE IN STATISTICS</option>
+                                <option value="547">BACHELOR OF SCIENCE IN TOURISM</option>
+                                <option value="548">BACHELOR OF SCIENCE IN TOURISM MANAGEMENT</option>
+                                <option value="549">BACHELOR OF SCIENCE IN TRANSPORTATION MANAGEMENT
+                                </option>
+                                <option value="635">BACHELOR OF SECONDARY EDUCATION</option>
+                                <option value="550">BACHELOR OF SECONDARY EDUCATION MAJOR IN ENGLISH
+                                </option>
+                                <option value="631">BACHELOR OF SECONDARY EDUCATION MAJOR IN FILIPINO
+                                </option>
+                                <option value="629">BACHELOR OF SECONDARY EDUCATION MAJOR IN MATHEMATICS
+                                </option>
+                                <option value="646">BACHELOR OF SECONDARY EDUCATION MAJOR IN SCIENCE
+                                </option>
+                                <option value="628">BACHELOR OF SECONDARY EDUCATION MAJOR IN SOCIAL
+                                    STUDIES</option>
+                                <option value="664">BACHELOR OF TECHNICAL VOCATIONAL EDUCATION MAJOR IN
+                                    FOOD SERVICE MANAGEMENT(VOID)</option>
+                                <option value="653">BACHELOR OF TECHNICAL-VOCATIONAL TEACHER EDUCATION
+                                    MAJOR IN FOOD SERVICE MANAGEMENT</option>
+                                <option value="665">BACHELOR OF TECHNOLOGY AND LIVELIHOOD EDUCATIONS
+                                    MAJOR IN HOME ECONOMICS</option>
+                                <option value="666">BACHELOR OF TECHNOLOGY AND LIVELIHOOD EDUCATIONS
+                                    MAJOR IN INDUSTRIAL ARTS</option>
+                                <option value="667">BACHELOR OF TECHNOLOGY AND LIVELIHOOD EDUCATIONS
+                                    MAJOR IN INFORMATION AND COMMUNICATION TECHNOLOGY</option>
+                                <option value="552">BATSILYER NG ARTES SA FILIPINO</option>
+                                <option value="553">BATSILYER NG ARTES SA FILIPINO MAYNOR SA EDUKASYON
+                                </option>
+                                <option value="554">BATSILYER NG ARTES SA FILIPINO MAYNOR SA
+                                    INSTRUCTIONAL ARTS</option>
+                                <option value="555">BATSILYER NG ARTES SA FILIPINO MAYNOR SA MASS
+                                    COMMUNICATION</option>
+                                <option value="556">BATSILYER NG ARTES SA FILIPINO MAYNOR SA PANGMADLANG
+                                    KOMUNIKASYON</option>
+                                <option value="557">BATSILYER NG ARTES SA FILIPINOLOHIYA</option>
+                                <option value="558">BATSILYER NG MGA SINING SA FILIPINOLOHIYA</option>
+                                <option value="559">BATSILYER NG MGA SINING SA FILIPINOLOHIYA OPSYON SA
+                                    INSTRUCTIONAL ARTS - AB FIL-IA</option>
+                                <option value="560">BATSILYER NG MGA SINING SA FILIPINOLOHIYA OPSYON SA
+                                    INSTRUCTIONAL ARTS - BSF-IA</option>
+                                <option value="561">BATSILYER NG MGA SINING SA FILIPINOLOHIYA OPSYON SA
+                                    MASS COMMUNICATION - AB FIL-MC</option>
+                                <option value="562">BATSILYER NG MGA SINING SA FILIPINOLOHIYA OPSYON SA
+                                    MASS COMMUNICATION - BSF-MC</option>
+                                <option value="563">BATSILYER NG MGA SINING SA FILIPINOLOHIYA OPSYON SA
+                                    SINING NG PAGTUTURO - AB FIL-IA</option>
+                                <option value="564">BATSILYER NG MGA SINING SA FILIPINOLOHIYA OPSYON SA
+                                    SINING NG PAGTUTURO - BSF-SP</option>
+                                <option value="565">BATSILYER SA AGHAM NG EDUKASYON SA NEGOSYO</option>
+                                <option value="566">BATSILYER SA AGHAM NG PANGANGALAKAL</option>
+                                <option value="567">BATSILYER SA AGHAM NG PANGANGALAKAL BSC</option>
+                                <option value="568">BATSILYER SA SINING-BATSILYER SA AGHAM NG
+                                    PANGANGALAKAL</option>
+                                <option value="569">BOOKKEEPING SECTION II</option>
+                                <option value="570">BOOKKEEPING SECTION V</option>
+                                <option value="571">BSC - AB PSYCHOLOGY</option>
+                                <option value="572">CERTIFICATE IN COMPUTER TECHNOLOGY</option>
+                                <option value="573">CERTIFICATE IN PHYSICAL EDUCATION</option>
+                                <option value="574">CERTIFICATE IN TEACHER EDUCATION</option>
+                                <option value="586">DOCTOR IN BUSINESS ADMINISTRATION</option>
+                                <option value="587">DOCTOR IN EDUCATIONAL MANAGEMENT</option>
+                                <option value="588">DOCTOR IN MANAGEMENT</option>
+                                <option value="589">DOCTOR IN PUBLIC ADMINISTRATION</option>
+                                <option value="590">DOCTOR OF BUSINESS ADMINISTRATION</option>
+                                <option value="668">DOCTOR OF PHILOSOPHY IN PSYCHOLOGY</option>
+                                <option value="669">DOCTOR OF PHILOSOPHY IN PSYCHOLOGY W/ SPECIALIZATION
+                                    IN CLINICAL PSYCHOLOGY</option>
+                                <option value="670">DOCTOR OF PHILOSOPHY IN PSYCHOLOGY W/ SPECIALIZATION
+                                    IN CLINICAL PSYCHOLOGY(VOID)</option>
+                                <option value="671">DOCTOR OF PHILOSOPHY IN PSYCHOLOGY W/ SPECIALIZATION
+                                    IN INDUSTRIAL PSYCHOLOGY</option>
+                                <option value="672">DOCTOR OF PHILOSOPHY IN PSYCHOLOGY W/ SPECIALIZATION
+                                    IN INDUSTRIAL PSYCHOLOGY(VOID)</option>
+                                <option value="673">DOCTOR OF PHILOSOPHY IN PSYCHOLOGY(VOID)</option>
+                                <option value="591">ECONOMICS</option>
+                                <option value="592">ECONOMICS MAJOR</option>
+                                <option value="593">ECONOMICS-FINANCE MAJOR</option>
+                                <option value="594">INSTITUTE OF NON-TRADITIONAL STUDIES</option>
+                                <option value="595">MAJOR IN RETAIL MERCHANDISING</option>
+                                <option value="596">MAJOR SECRETARIAL - BSBE</option>
+                                <option value="597">MALABATSILYER SA PANGANGALAKAL (ASSOCIATE IN
+                                    COMMERCE)</option>
+                                <option value="598">MANAGEMENT</option>
+                                <option value="599">MANAGEMENT MAJOR</option>
+                                <option value="600">MARKETING</option>
+                                <option value="601">MARKETING MAJOR</option>
+                                <option value="674">MASTER IN APPLIED STATISTICS</option>
+                                <option value="675">MASTER IN APPLIED STATISTICS MAJOR IN OFFICIAL
+                                    STATISTICS</option>
+                                <option value="676">MASTER IN APPLIED STATISTICS MAJOR IN STATISTICAL
+                                    METHODS</option>
+                                <option value="677">MASTER IN BUSINESS ADMINISTRATION</option>
+                                <option value="678">MASTER IN BUSINESS ADMINISTRATION W/ SPECIALIZATION
+                                    IN ENTREPRENEURSHIP</option>
+                                <option value="679">MASTER IN BUSINESS ADMINISTRATION W/ SPECIALIZATION
+                                    IN FINANCIAL MANAGEMENT</option>
+                                <option value="680">MASTER IN BUSINESS ADMINISTRATION W/ SPECIALIZATION
+                                    IN GENERAL BUSINESS ADMINISTRATION</option>
+                                <option value="681">MASTER IN BUSINESS ADMINISTRATION W/ SPECIALIZATION
+                                    IN HUMAN RESOURCE MANAGEMENT</option>
+                                <option value="682">MASTER IN BUSINESS ADMINISTRATION W/ SPECIALIZATION
+                                    IN MARKETING MANAGEMENT</option>
+                                <option value="683">MASTER IN BUSINESS EDUCATION</option>
+                                <option value="684">MASTER IN COMMUNICATION</option>
+                                <option value="685">MASTER IN COMMUNICATION W/ SPECIALIZATION IN
+                                    BROADCAST JOURNALISM</option>
+                                <option value="686">MASTER IN COMMUNICATION W/ SPECIALIZATION IN
+                                    COMMUNICATION MANAGEMENT</option>
+                                <option value="687">MASTER IN COMMUNICATION W/ SPECIALIZATION IN
+                                    COMMUNICATION RESEARCH</option>
+                                <option value="688">MASTER IN ECONOMICS(NON-THESIS)</option>
+                                <option value="689">MASTER IN EDUCATIONAL MANAGEMENT W/ SPECIALIZATION
+                                    IN ADMINISTRATION AND SUPERVISION</option>
+                                <option value="690">MASTER IN EDUCATIONAL MANAGEMENT W/ SPECIALIZATION
+                                    IN CURRICULUM AND CONSTRUCTION</option>
+                                <option value="691">MASTER IN EDUCATIONAL MANAGEMENT W/ SPECIALIZATION
+                                    IN CURRICULUM AND INSTRUCTION</option>
+                                <option value="692">MASTER IN EDUCATIONAL MANAGEMENT WITH SPECIALIZATION
+                                    IN EDUCATIONAL LEADERSHIP AND MANAGEMENT</option>
+                                <option value="693">MASTER IN EDUCATIONAL MANAGEMENT WITH SPECIALIZATION
+                                    IN INSTRUCTIONAL LEADERSHIP</option>
+                                <option value="694">MASTER IN ENGLISH LANGUAGE TEACHING</option>
+                                <option value="695">MASTER IN FILIPINO</option>
+                                <option value="696">MASTER IN INDUSTRIAL ENGINEERING AND MANAGEMENT
+                                </option>
+                                <option value="697">MASTER IN INFORMATION TECHNOLOGY</option>
+                                <option value="698">MASTER IN INFORMATION TECHNOLOGY W/ SPECIALIZATION
+                                    IN COMMUNICATION ADMINISTRATION</option>
+                                <option value="699">MASTER IN INFORMATION TECHNOLOGY W/ SPECIALIZATION
+                                    IN DATABASE ADMINISTRATION</option>
+                                <option value="700">MASTER IN INFORMATION TECHNOLOGY W/ SPECIALIZATION
+                                    IN MANAGING INFORMATION SYSTEM</option>
+                                <option value="701">MASTER IN INFORMATION TECHNOLOGY W/ SPECIALIZATION
+                                    IN NETWORK ADMINISTRATION</option>
+                                <option value="702">MASTER IN LIBRARY AND INFORMATION SCIENCE</option>
+                                <option value="703">MASTER IN LIBRARY AND INFORMATION SCIENCE W/
+                                    SPECIALIZATION IN ACADEMIC LIBRARIES</option>
+                                <option value="704">MASTER IN LIBRARY AND INFORMATION SCIENCE W/
+                                    SPECIALIZATION IN PUBLIC LIBRARIES</option>
+                                <option value="705">MASTER IN LIBRARY AND INFORMATION SCIENCE W/
+                                    SPECIALIZATION IN SCHOOL LIBRARIES</option>
+                                <option value="706">MASTER IN LIBRARY AND INFORMATION SCIENCE W/
+                                    SPECIALIZATION IN SPECIAL LIBRARIES</option>
+                                <option value="707">MASTER IN MATHEMATICS EDUCATION</option>
+                                <option value="708">MASTER IN MATHEMATICS EDUCATION W/ SPECIALIZATION IN
+                                    COLLEGE TEACHING</option>
+                                <option value="709">MASTER IN MATHEMATICS EDUCATION W/ SPECIALIZATION IN
+                                    HIGH SCHOOL TEACHING</option>
+                                <option value="710">MASTER IN PHYSICAL EDUCATION AND SPORTS</option>
+                                <option value="711">MASTER IN PSYCHOLOGY W/ SPECIALIZATION IN CLINICAL
+                                    PSYCHOLOGY</option>
+                                <option value="712">MASTER IN PSYCHOLOGY W/ SPECIALIZATION IN INDUSTRIAL
+                                    PSYCHOLOGY</option>
+                                <option value="713">MASTER IN PSYCHOLOGY W/ SPECIALIZATION IN SCHOOL
+                                    PSYCHOLOGY</option>
+                                <option value="714">MASTER IN PUBLIC ADMINISTRATION</option>
+                                <option value="715">MASTER OF ARTS IN ECONOMICS(THESIS)</option>
+                                <option value="716">MASTER OF ARTS IN EDUCATION MAJOR IN TEACHING IN
+                                    CHALLENGED AREAS</option>
+                                <option value="717">MASTER OF ARTS IN ENGLISH LANGUAGE TEACHING</option>
+                                <option value="718">MASTER OF ARTS IN FILIPINO</option>
+                                <option value="719">MASTER OF ARTS IN FILIPINO (PANITIKAN)</option>
+                                <option value="720">MASTER OF ARTS IN FILIPINO (WIKA)</option>
+                                <option value="721">MASTER OF ARTS IN PSYCHOLOGY W/ SPECIALIZATION IN
+                                    CLINICAL PSYCHOLOGY</option>
+                                <option value="722">MASTER OF ARTS IN PSYCHOLOGY W/ SPECIALIZATION IN
+                                    INDUSTRIAL PSYCHOLOGY</option>
+                                <option value="723">MASTER OF ARTS MAJOR IN TEACHING ENGLISH AS A SECOND
+                                    LANGUAGE</option>
+                                <option value="724">MASTER OF SCIENCE IN CIVIL ENGINEERING W/
+                                    SPECIALIZATION IN GEOTECHNICAL ENGINEERING</option>
+                                <option value="725">MASTER OF SCIENCE IN CIVIL ENGINEERING W/
+                                    SPECIALIZATION IN STRUCTURAL ENGINEERING</option>
+                                <option value="726">MASTER OF SCIENCE IN CIVIL ENGINEERING W/
+                                    SPECIALIZATION IN TRANSPORTATION ENGINEERING</option>
+                                <option value="727">MASTER OF SCIENCE IN CIVIL ENGINEERING W/
+                                    SPECIALIZATION IN WATER RESOURCES ENGINEERING</option>
+                                <option value="728">MASTER OF SCIENCE IN COMPUTER ENGINEERING W/
+                                    SPECIALIZATION IN APPLIED CYBERSECURITY AND DIGITAL FORENSICS
+                                </option>
+                                <option value="729">MASTER OF SCIENCE IN COMPUTER ENGINEERING W/
+                                    SPECIALIZATION IN DATA SCIENCE AND ENGINEERING</option>
+                                <option value="730">MASTER OF SCIENCE IN ECONOMICS</option>
+                                <option value="731">MASTER OF SCIENCE IN ELECTRONICS ENGINEERING W/
+                                    SPECIALIZATION IN ARTIFICIAL INTELLIGENCE AND AUTOMATION</option>
+                                <option value="732">MASTER OF SCIENCE IN ELECTRONICS ENGINEERING W/
+                                    SPECIALIZATION IN TELECOMMUNICATIONS</option>
+                                <option value="733">MASTER OF SCIENCE IN ENGINEERING W/ OPTION IN
+                                    COMPUTER ENGINEERING</option>
+                                <option value="734">MASTER OF SCIENCE IN ENGINEERING W/ OPTION IN
+                                    EARTHQUAKE ENGINEERING</option>
+                                <option value="735">MASTER OF SCIENCE IN ENGINEERING W/ OPTION IN
+                                    ELECTRONICS AND COMMUNICATION ENGINEERING</option>
+                                <option value="736">MASTER OF SCIENCE IN ENGINEERING W/ OPTION IN
+                                    STRUCTURAL ENGINEERING</option>
+                                <option value="737">MASTER OF SCIENCE IN ENGINEERING W/ OPTION IN
+                                    TRANSPORTATION ENGINEERING</option>
+                                <option value="738">MASTER OF SCIENCE IN INDUSTRIAL ENGINEERING AND
+                                    MANAGEMENT</option>
+                                <option value="739">MASTER OF SCIENCE IN INDUSTRIAL ENGINEERING W/
+                                    SPECIALIZATION IN HUMAN FACTOR ENGINEERING</option>
+                                <option value="740">MASTER OF SCIENCE IN INDUSTRIAL ENGINEERING W/
+                                    SPECIALIZATION IN LOGISTICS AND SUPPLY CHAIN MANAGEMENT</option>
+                                <option value="741">MASTER OF SCIENCE IN INDUSTRIAL ENGINEERING W/
+                                    SPECIALIZATION IN OPERATIONS PRODUCTION MANAGEMENT</option>
+                                <option value="742">MASTER OF SCIENCE IN INFORMATION TECHNOLOGY</option>
+                                <option value="743">MASTER OF SCIENCE IN INFORMATION TECHNOLOGY W/
+                                    SPECIALIZATION IN COMMUNICATION ADMINISTRATION</option>
+                                <option value="744">MASTER OF SCIENCE IN INFORMATION TECHNOLOGY W/
+                                    SPECIALIZATION IN DATABASE ADMINISTRATION</option>
+                                <option value="745">MASTER OF SCIENCE IN INFORMATION TECHNOLOGY W/
+                                    SPECIALIZATION IN MANAGEMENT INFORMATION SYSTEM</option>
+                                <option value="746">MASTER OF SCIENCE IN INFORMATION TECHNOLOGY W/
+                                    SPECIALIZATION IN NETWORK ADMINISTRATION</option>
+                                <option value="747">MASTER OF SCIENCE IN MATHEMATICS EDUCATION</option>
+                                <option value="748">MASTER OF SCIENCE IN MATHEMATICS EDUCATION W/
+                                    SPECIALIZATION IN COLLEGE TEACHING</option>
+                                <option value="749">MASTER OF SCIENCE IN MATHEMATICS EDUCATION W/
+                                    SPECIALIZATION IN HIGH SCHOOL TEACHING</option>
+                                <option value="602">MEDYOR SA AGHAM PAMPULITIKA</option>
+                                <option value="603">MEDYOR SA KARUNUNGANG PANGKALIHIM</option>
+                                <option value="604">MEDYOR SA PAG-AANUNSYO</option>
+                                <option value="605">MEDYOR SA PAGSASAPAMILIHAN</option>
+                                <option value="606">MEDYOR SA PAGTUTUOS</option>
+                                <option value="607">MEDYOR SA PANGANGASIWA</option>
+                                <option value="608">MEDYOR SA PANGKABUHAYAN</option>
+                                <option value="609">MEDYOR SA SIKOLOHIYA</option>
+                                <option value="610">MINOR IN SERVICE MANAGEMENT</option>
+                                <option value="611">MINOR IN SERVICE MANAGEMENT FOR BUSINESS PROCESS
+                                    OUTSOURCING</option>
+                                <option value="612">ONE-YEAR BOOKKEEPING AND ACCOUNTING CURRICULUM
+                                </option>
+                                <option value="613">ONE-YEAR CERTIFICATE IN COMPUTER TECHNOLOGY POST
+                                    BACCALAUREATE PROGRAM</option>
+                                <option value="614">ONE-YEAR SECRETARIAL CURRICULUM</option>
+                                <option value="615">POST BACCALAUREATE IN BUSINESS TEACHER EDUCATION
+                                </option>
+                                <option value="616">POST BACCALAUREATE IN COMPUTER TECHNOLOGY</option>
+                                <option value="617">POST BACCALAUREATE IN MANAGEMENT</option>
+                                <option value="634">POST BACCALAUREATE IN PHYSICAL EDUCATION</option>
+                                <option value="618">POST BACCALAUREATE IN TEACHER EDUCATION</option>
+                                <option value="620">POST-GRADUATE IN PHYSICAL EDUCATION</option>
+                                <option value="621">SALESMANSHIP SECTION III</option>
+                                <option value="622">SECRETARIAL</option>
+                                <option value="623">SECRETARIAL MAJOR</option>
+                                <option value="624">STENOGRAPHY SECTION I</option>
+                                <option value="625">STENOGRAPHY SECTION IV</option>
+                                <option value="626">TWO-YEAR ACCOUNTING</option>
+                                <option value="627">TWO-YEAR SECRETARIAL</option>
+                                <option value="Others">Others</option>
+
+                            </select>
+                            <button class="update-button" id="program-button"
+                                onclick="enableFunction(document.getElementById('program'))" type="button"
+                                data-update="program">Update</button>
+                        </div>
+
+                        <div class="wide-field">
+                            <label class="field-label" for="documentsFor">Documents for:<b>*</b></label>
+                            <select id="documentsFor" disabled onchange="this.disabled = true" required>
+                                <option selected="Unselected" value="4">Graduate Students</option>
+                                <option selected="selected" value="3">Undergraduate Students</option>
+                            </select>
+                            <button class="update-button" id="documentsFor-button"
+                                onclick="enableFunction(document.getElementById('documentsFor'))" type="button"
+                                data-update="program">Update</button>
+                        </div>
+
+                        <div class="three-column">
+                            <div class="field-group">
+                                <label for="semesters">Number of Semester/s in PUP:<b>*</b></label>
+                                <select id="semesters" required>
+                                    <option value="">SELECT</option>
+                                    <option value="12">12</option>
+                                    <option value="11">11</option>
+                                    <option value="10">10</option>
+                                    <option value="9">9</option>
+                                    <option value="8">8</option>
+                                    <option value="7">7</option>
+                                    <option value="6">6</option>
+                                    <option value="5">5</option>
+                                    <option value="4">4</option>
+                                    <option value="3">3</option>
+                                    <option value="2">2</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="summers">Number of Summer/s in PUP:<b>*</b></label>
+                                <select id="summers" required>
+                                    <option value="">SELECT</option>
+                                    <option value="12">12</option>
+                                    <option value="11">11</option>
+                                    <option value="10">10</option>
+                                    <option value="9">9</option>
+                                    <option value="8">8</option>
+                                    <option value="7">7</option>
+                                    <option value="6">6</option>
+                                    <option value="5">5</option>
+                                    <option value="4">4</option>
+                                    <option value="3">3</option>
+                                    <option value="2">2</option>
+                                    <option value="1">1</option>
+                                    <option value="0">0</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="classification">Choose your Classification:<b>*</b></label>
+                                <select id="classification" required>
+                                    <option value="">SELECT</option>
+                                    <option value="Alumna/Alumnus">Alumna/Alumnus</option>
+                                    <option value="Student/Owner of Record Requested">Student/Owner of
+                                        Record Requested</option>
+                                    <option value="Parent of the Student/Owner of the Record">Parent of the
+                                        Student/Owner of the Record</option>
+                                    <option value="Relative of the Student/Owner of the Record">Relative of
+                                        the Student/Owner of the Record</option>
+                                    <option value="PUP Faculty Member/Faculty Designee">PUP Faculty
+                                        Member/Faculty Designee</option>
+                                    <option value="PUP Administrative Employee">PUP Administrative Employee
+                                    </option>
+                                    <option value="General Public">General Public</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="three-column last-term-row">
+                            <div class="field-group">
+                                <span class="last-term-label">Last Term</span>
+                                <label for="schoolYear" style="width: 97%; margin-left: 10px;">School Year:<b>*</b></label>
+                                <select id="schoolYear" required>
+                                    <option value="">SELECT</option>
+                                    <option value="2026 - 2027">2026 - 2027</option>
+                                    <option value="2025 - 2026">2025 - 2026</option>
+                                    <option value="2024 - 2025">2024 - 2025</option>
+                                    <option value="2023 - 2024">2023 - 2024</option>
+                                    <option value="2022 - 2023">2022 - 2023</option>
+                                    <option value="2021 - 2022">2021 - 2022</option>
+                                    <option value="2020 - 2021">2020 - 2021</option>
+                                    <option value="2019 - 2020">2019 - 2020</option>
+                                    <option value="2018 - 2019">2018 - 2019</option>
+                                    <option value="2017 - 2018">2017 - 2018</option>
+                                    <option value="2016 - 2017">2016 - 2017</option>
+                                    <option value="2015 - 2016">2015 - 2016</option>
+                                    <option value="2014 - 2015">2014 - 2015</option>
+                                    <option value="2013 - 2014">2013 - 2014</option>
+                                    <option value="2012 - 2013">2012 - 2013</option>
+                                    <option value="2011 - 2012">2011 - 2012</option>
+                                    <option value="2010 - 2011">2010 - 2011</option>
+                                    <option value="2009 - 2010">2009 - 2010</option>
+                                    <option value="2008 - 2009">2008 - 2009</option>
+                                    <option value="2007 - 2008">2007 - 2008</option>
+                                    <option value="2006 - 2007">2006 - 2007</option>
+                                    <option value="2005 - 2006">2005 - 2006</option>
+                                    <option value="2004 - 2005">2004 - 2005</option>
+                                    <option value="2003 - 2004">2003 - 2004</option>
+                                    <option value="2002 - 2003">2002 - 2003</option>
+                                    <option value="2001 - 2002">2001 - 2002</option>
+                                    <option value="2000 - 2001">2000 - 2001</option>
+                                    <option value="1999 - 2000">1999 - 2000</option>
+                                    <option value="1998 - 1999">1998 - 1999</option>
+                                    <option value="1997 - 1998">1997 - 1998</option>
+                                    <option value="1996 - 1997">1996 - 1997</option>
+                                    <option value="1995 - 1996">1995 - 1996</option>
+                                    <option value="1994 - 1995">1994 - 1995</option>
+                                    <option value="1993 - 1994">1993 - 1994</option>
+                                    <option value="1992 - 1993">1992 - 1993</option>
+                                    <option value="1991 - 1992">1991 - 1992</option>
+                                    <option value="1990 - 1991">1990 - 1991</option>
+                                    <option value="1989 - 1990">1989 - 1990</option>
+                                    <option value="1988 - 1989">1988 - 1989</option>
+                                    <option value="1987 - 1988">1987 - 1988</option>
+                                    <option value="1986 - 1987">1986 - 1987</option>
+                                    <option value="1985 - 1986">1985 - 1986</option>
+                                    <option value="1984 - 1985">1984 - 1985</option>
+                                    <option value="1983 - 1984">1983 - 1984</option>
+                                    <option value="1982 - 1983">1982 - 1983</option>
+                                    <option value="1981 - 1982">1981 - 1982</option>
+                                    <option value="1980 - 1981">1980 - 1981</option>
+                                    <option value="1979 - 1980">1979 - 1980</option>
+                                    <option value="1978 - 1979">1978 - 1979</option>
+                                    <option value="1977 - 1978">1977 - 1978</option>
+                                    <option value="1976 - 1977">1976 - 1977</option>
+                                    <option value="1975 - 1976">1975 - 1976</option>
+                                    <option value="1974 - 1975">1974 - 1975</option>
+                                    <option value="1973 - 1974">1973 - 1974</option>
+                                    <option value="1972 - 1973">1972 - 1973</option>
+                                    <option value="1971 - 1972">1971 - 1972</option>
+                                    <option value="1970 - 1971">1970 - 1971</option>
+                                    <option value="1969 - 1970">1969 - 1970</option>
+                                    <option value="1968 - 1969">1968 - 1969</option>
+                                    <option value="1967 - 1968">1967 - 1968</option>
+                                    <option value="1966 - 1967">1966 - 1967</option>
+                                    <option value="1965 - 1966">1965 - 1966</option>
+                                    <option value="1964 - 1965">1964 - 1965</option>
+                                    <option value="1963 - 1964">1963 - 1964</option>
+                                    <option value="1962 - 1963">1962 - 1963</option>
+                                    <option value="1961 - 1962">1961 - 1962</option>
+                                    <option value="1960 - 1961">1960 - 1961</option>
+                                    <option value="1959 - 1960">1959 - 1960</option>
+                                    <option value="1958 - 1959">1958 - 1959</option>
+                                    <option value="1957 - 1958">1957 - 1958</option>
+                                    <option value="1956 - 1957">1956 - 1957</option>
+                                    <option value="1955 - 1956">1955 - 1956</option>
+                                    <option value="1954 - 1955">1954 - 1955</option>
+                                    <option value="1953 - 1954">1953 - 1954</option>
+                                    <option value="1952 - 1953">1952 - 1953</option>
+                                    <option value="1951 - 1952">1951 - 1952</option>
+                                    <option value="1950 - 1951">1950 - 1951</option>
+                                    <option value="1949 - 1950">1949 - 1950</option>
+                                    <option value="1948 - 1949">1948 - 1949</option>
+                                    <option value="1947 - 1948">1947 - 1948</option>
+                                    <option value="1946 - 1947">1946 - 1947</option>
+                                    <option value="1945 - 1946">1945 - 1946</option>
+                                    <option value="1944 - 1945">1944 - 1945</option>
+                                    <option value="1943 - 1944">1943 - 1944</option>
+                                    <option value="1942 - 1943">1942 - 1943</option>
+                                    <option value="1941 - 1942">1941 - 1942</option>
+                                    <option value="1940 - 1941">1940 - 1941</option>
+                                    <option value="1939 - 1940">1939 - 1940</option>
+                                    <option value="1938 - 1939">1938 - 1939</option>
+                                    <option value="1937 - 1938">1937 - 1938</option>
+                                    <option value="1936 - 1937">1936 - 1937</option>
+                                    <option value="1935 - 1936">1935 - 1936</option>
+                                    <option value="1934 - 1935">1934 - 1935</option>
+                                    <option value="1933 - 1934">1933 - 1934</option>
+                                    <option value="1932 - 1933">1932 - 1933</option>
+                                    <option value="1931 - 1932">1931 - 1932</option>
+                                    <option value="1930 - 1931">1930 - 1931</option>
+                                    <option value="1929 - 1930">1929 - 1930</option>
+                                    <option value="1928 - 1929">1928 - 1929</option>
+                                    <option value="1927 - 1928">1927 - 1928</option>
+                                    <option value="1926 - 1927">1926 - 1927</option>
+                                    <option value="1925 - 1926">1925 - 1926</option>
+                                    <option value="1924 - 1925">1924 - 1925</option>
+                                    <option value="1923 - 1924">1923 - 1924</option>
+                                    <option value="1922 - 1923">1922 - 1923</option>
+                                    <option value="1921 - 1922">1921 - 1922</option>
+                                    <option value="1920 - 1921">1920 - 1921</option>
+                                    <option value="1919 - 1920">1919 - 1920</option>
+                                    <option value="1918 - 1919">1918 - 1919</option>
+                                    <option value="1917 - 1918">1917 - 1918</option>
+                                    <option value="1916 - 1917">1916 - 1917</option>
+                                    <option value="1915 - 1916">1915 - 1916</option>
+                                    <option value="1914 - 1915">1914 - 1915</option>
+                                    <option value="1913 - 1914">1913 - 1914</option>
+                                    <option value="1912 - 1913">1912 - 1913</option>
+                                    <option value="1911 - 1912">1911 - 1912</option>
+                                    <option value="1910 - 1911">1910 - 1911</option>
+                                    <option value="1909 - 1910">1909 - 1910</option>
+                                    <option value="1908 - 1909">1908 - 1909</option>
+                                    <option value="1907 - 1908">1907 - 1908</option>
+                                    <option value="1906 - 1907">1906 - 1907</option>
+
+
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="term">Term:<b>*</b></label>
+                                <select id="term" required>
+                                    <option value="">SELECT</option>
+                                    <option>1st Semester</option>
+                                    <option>2nd Semester</option>
+                                </select>
+                            </div>
+                            <div class="field-group purpose-group">
+                                <label for="purpose">Purpose of Request:<b>*</b></label>
+                                <select id="purpose" onchange="OtherTagEnable(this.value)" required>
+                                    <option value="">SELECT</option>
+                                    <option value="Readmission">Readmission</option>
+                                    <option value="Employment">Employment</option>
+                                    <option value="Transfer to other school">Transfer to other school</option>
+                                    <option
+                                        value="Board / Licensure Examination [Please specify here what exam will you take]">
+                                        Board / Licensure Examination [Please specify here what exam will you
+                                        take]
+                                    </option>
+                                    <option value="Further Studies">Further Studies</option>
+                                    <option value="Scholarship">Scholarship</option>
+                                    <option>Other</option>
+                                </select>
+                                <input id="otherPurpose" class="other-purpose" type="text" placeholder="Other Purpose"
+                                    aria-label="Specify other purpose" hidden>
+                            </div>
+                        </div>
+
+                        <section class="document-section" aria-labelledby="documentTypeHeading">
+                            <h2 id="documentTypeHeading">Type of Document (Choose at least 1)<b>*</b></h2>
+                            <div class="document-toolbar">
+                                <label class="search-box" for="documentSearch">
+                                    <img src="./assets/icons/mag-glass-icon.svg" style="width: 24px; height: auto; filter: brightness(0) invert(1);">
+                                    <input id="documentSearch" type="search" placeholder="SEARCH" autocomplete="off">
+                                </label>
+                                <button class="show-all-button" type="button" id="showAllBtn">Show all
+                                    Documents</button>
+                                <div class="filter-wrap">
+                                    <button class="filter-button" type="button" id="filterBtn" aria-expanded="false"
+                                        aria-label="Filter document categories">
+                                        <img src="./assets/icons/filter-icon.svg" style="width: 27px; height: auto; filter: brightness(0) saturate(100%) invert(11%) sepia(83%) saturate(4736%) hue-rotate(354deg) brightness(62%) contrast(113%);">
+                                    </button>
+
+                                    <div class="filter-menu" id="filterMenu" hidden>
+                                        <button type="button" data-category="Transcript of Records">
+                                            Transcript of Records
+                                        </button>
+
+                                        <button type="button" data-category="Certifications">
+                                            Certifications
+                                        </button>
+
+                                        <button type="button" data-category="Unclaimed">
+                                            Unclaimed
+                                        </button>
+
+                                        <button type="button" data-category="CAV (CHED/DFA/WES/CES)">
+                                            CAV (CHED/DFA/WES/CES)
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-wrap">
+                                <table class="documents-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Document (Click the document/s you want to request)</th>
+                                            <th>Quantity</th>
+                                            <th>Processing Time</th>
+                                            <th>Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="documentRows">
+                                        <tr class="empty-row">
+                                            <td colspan="4">Choose a document category or select “Show all Documents”.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <div class="totals">
+                            <div class="total-line stamp-line">
+                                <label>Documentary Stamp:<small>(30 pesos per document)</small></label>
+                                <output id="stampTotal">0.00</output>
+                            </div>
+                            <div class="total-line stamp-line">
+                                <label>Document Total:</label>
+                                <output id="documentTotal">0.00</output>
+                            </div>
+                            <div class="total-line grand-total">
+                                <label>Total:</label>
+                                <output id="grandTotal">0.00</output>
+                            </div>
+                        </div>
+
+                        <div class="submission-area" id="submissionArea" hidden>
+                            <label class="check-row"><input type="checkbox" id="notifyEmail"> Notify via email when the
+                                document/s
+                                is/are ready for pick up.</label>
+                            <label class="check-row"><input type="checkbox" id="agreeTerms" required> I agree to the
+                                Office
+                                of the
+                                University Registrar's <a href="#terms">Terms and Conditions</a></label>
+                            <label class="check-row"><input type="checkbox" id="confirmDocuments" required> I checked
+                                ALL
+                                the documents
+                                I need to request (One transaction per client only. Kindly check ALL the documents you
+                                need
+                                before
+                                clicking "Submit")</label>
+                            <button class="submit-button" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <footer>
+        <br><br>
+        <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="box-shadow: 1px 1px 10px black;"
+            id="div_footer">
+            <div class="container" style="padding: 10px;">
+                <div class="footer-text">
+                    <div>© 2026 Polytechnic University of the Philippines | <a href="#">Terms of Use</a> | <a
+                            href="#">Privacy Statement</a></div>
+                    <div>Contact us at: <a href="tel:5335-1787">5335-1787</a> local 285, 238, 389, 293, 740 · <a
+                            href="#">Ground Flr., South Wing, Main Bldg., PUP Main Campus, Sta. Mesa, Manila</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </footer>
+
+    <script src="./js/requests.js" defer></script>
+    <script src="./js/new-request.js" defer></script>
+</body>
+
+</html>

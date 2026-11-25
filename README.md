@@ -7,7 +7,7 @@ A human-computer interaction (HCI) project that proposes improvements to the Onl
 ## Team
 
 MEMBERS:
-Alenica Dela Crus
+Alenica Kariz Dela Cruz
 Chelsey Silva
 Gil Robert Mislang
 Hannah Rejuso
