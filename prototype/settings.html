@@ -117,9 +117,9 @@
 
   <section class="profile" aria-label="Profile">
     <div>
-      <p class="profile-name">NAME HERE</p>
-      <p class="profile-meta">COURSE</p>
-      <p class="profile-meta">STUDENT NUMBER</p>
+      <p class="profile-name"><span data-field="fullName">NAME HERE</span></p>
+      <p class="profile-meta"><span data-field="courseAdmitted">COURSE</span></p>
+      <p class="profile-meta"><span data-field="studentNumber">XXXX-XXXXX-X-X</span></p>
     </div>
 
     <div class="photo">
@@ -150,15 +150,15 @@
       </div>
       <div class="panel-body">
         <dl class="info-list">
-          <div><dt>Last Name:</dt><dd>LAST NAME</dd></div>
-          <div><dt>First Name:</dt><dd>FIRST NAME</dd></div>
-          <div><dt>Middle Name:</dt><dd>MIDDLE NAME</dd></div>
-          <div><dt>Date of Birth:</dt><dd>MM/DD/YYYY</dd></div>
-          <div><dt>Permanent Address:</dt><dd>COMPLETE PERMANENT ADDRESS</dd></div>
-          <div><dt>Email Address:</dt><dd>student@gmail.com</dd></div>
-          <div><dt>Mobile Number:</dt><dd>09xxxxxxxxx</dd></div>
-          <div><dt>Phone Number:</dt><dd>23xxxx</dd></div>
-        </dl>
+          <div><dt>Last Name:</dt><dd><span data-field="lastName">LAST NAME</span></dd></div>
+          <div><dt>First Name:</dt><dd><span data-field="firstName">FIRST NAME</span></dd></div>
+          <div><dt>Middle Name:</dt><dd><span data-field="middleName">MIDDLE NAME</span></dd></div>
+          <div><dt>Date of Birth:</dt><dd><span data-field="dobMonth">MM</span> <span data-field="dobDay">DD</span>, <span data-field="dobYear">YYYY</span></dd></div>
+          <div><dt>Permanent Address:</dt><dd><span data-field="address">COMPLETE PERMANENT ADDRESS</span></dd></div>
+          <div><dt>Email Address:</dt><dd><span data-field="email">student@gmail.com</span></dd></div>
+          <div><dt>Mobile Number:</dt><dd><span data-field="mobile">09xxxxxxxxx</span></dd></div>
+          <div><dt>Phone Number:</dt><dd><span data-field="phone">23xxxx</span></dd></div>
+      </dl>
       </div>
     </section>
 
@@ -169,13 +169,13 @@
       </div>
       <div class="panel-body">
         <dl class="info-list">
-          <div><dt>Student Number:</dt><dd>XXXX-XXXXX-X-X</dd></div>
-          <div><dt>Status:</dt><dd>Undergrad</dd></div>
-          <div><dt>School Year Admitted:</dt><dd>XXXX</dd></div>
-          <div><dt>Admitted As:</dt><dd>New Freshman</dd></div>
-          <div><dt>Course:</dt><dd>COURSE</dd></div>
-          <div><dt>High School:</dt><dd>HIGH SCHOOL NAME (XXXX)</dd></div>
-          <div><dt>Elementary:</dt><dd>ELEMENTARY NAME (XXXX)</dd></div>
+            <div><dt>Student Number:</dt><dd><span data-field="studentNumber">XXXX-XXXXX-X-X</span></dd></div>
+            <div><dt>Status:</dt><dd><span data-field="status">Undergrad</span></dd></div>
+            <div><dt>School Year Admitted:</dt><dd><span data-field="yearAdmitted">XXXX</span></dd></div>
+            <div><dt>Admitted As:</dt><dd><span data-field="admittedAs">New Freshman</span></dd></div>
+            <div><dt>Course:</dt><dd><span data-field="courseAdmitted">COURSE</span></dd></div>
+            <div><dt>High School:</dt><dd><span data-field="highSchool">HIGH SCHOOL NAME</span> (<span data-field="hsYear">XXXX</span>)</dd></div>
+            <div><dt>Elementary:</dt><dd><span data-field="elementary">ELEMENTARY NAME</span> (<span data-field="elemYear">XXXX</span>)</dd></div>
         </dl>
       </div>
     </section>

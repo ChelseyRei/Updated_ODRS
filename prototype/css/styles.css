@@ -334,7 +334,6 @@ h2 {
   padding: 0 var(--space-md);
   background: var(--color-primary);
   color: #FFFFFF;
-  border: 2px solid var(--color-highlight);
   border-radius: 8px;
   font-weight: bold;
   text-decoration: none;
