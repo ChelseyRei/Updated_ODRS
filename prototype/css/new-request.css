@@ -328,7 +328,7 @@ select, .other-purpose {
   background: var(--maroon);
   color: #fff;
   font-weight: 600;
-  padding: 8px 12px;
+  padding: 5px 12px;
 }
 
 .filter-wrap { position: relative; }
@@ -338,7 +338,7 @@ select, .other-purpose {
   color: var(--maroon);
   font-size: 26px;
   transform: scaleX(.85);
-  padding: 0 2px;
+  margin-top: 5px;
 }
 .filter-menu {
   position: absolute;

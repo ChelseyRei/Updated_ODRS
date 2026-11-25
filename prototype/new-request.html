@@ -46,7 +46,7 @@
             <div class="col-sm-12 col-md-12" style="margin-top:-20px; margin-bottom:-3px">
                 <ul class="nav nav-pills panel">
                     <li><a href="settings.html">
-                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="account-icon"></span>
                             Account Settings</a></li>
                     <li class="active"><a href="#"><span class="glyphicon glyphicon-plus-sign"></span> New Request</a>
                     </li>
@@ -766,7 +766,7 @@
                         <div class="three-column last-term-row">
                             <div class="field-group">
                                 <span class="last-term-label">Last Term</span>
-                                <label for="schoolYear">School Year:<b>*</b></label>
+                                <label for="schoolYear" style="width: 97%; margin-left: 10px;">School Year:<b>*</b></label>
                                 <select id="schoolYear" required>
                                     <option value="">SELECT</option>
                                     <option value="2026 - 2027">2026 - 2027</option>
@@ -927,7 +927,7 @@
                             <h2 id="documentTypeHeading">Type of Document (Choose at least 1)<b>*</b></h2>
                             <div class="document-toolbar">
                                 <label class="search-box" for="documentSearch">
-                                    <span aria-hidden="true">⌕</span>
+                                    <img src="./assets/icons/mag-glass-icon.svg" style="width: 24px; height: auto; filter: brightness(0) invert(1);">
                                     <input id="documentSearch" type="search" placeholder="SEARCH" autocomplete="off">
                                 </label>
                                 <button class="show-all-button" type="button" id="showAllBtn">Show all
@@ -935,8 +935,7 @@
                                 <div class="filter-wrap">
                                     <button class="filter-button" type="button" id="filterBtn" aria-expanded="false"
                                         aria-label="Filter document categories">
-
-                                        <img src="./assets/images/filter-icon.png" style="width: 24px; height: auto;">
+                                        <img src="./assets/icons/filter-icon.svg" style="width: 27px; height: auto; filter: brightness(0) saturate(100%) invert(11%) sepia(83%) saturate(4736%) hue-rotate(354deg) brightness(62%) contrast(113%);">
                                     </button>
 
                                     <div class="filter-menu" id="filterMenu" hidden>
