@@ -19,14 +19,14 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
-                        <img src="./assets/images/system-logo-icon.png" alt="Logo" style="height: 30px;">
+                        <span class="logo-icon" role="img"></span>
                         <span>Online Document Request</span>
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <button type="button" class="btn btn-danger navbar-btn">
-                            <img src="./assets/images/logout-icon.png" alt="Logout" style="height: 20px; margin-right: 5px;">
+                            <span class="logout-icon"></span>
                             Logout</button>
                     </ul>
                 </div>
@@ -43,10 +43,10 @@
         <!-- Tabs -->
         <div class="col-sm-12 col-md-12" style="margin-top:-20px; margin-bottom:-3px">
             <ul class="nav nav-pills panel">
-                <li><a href="settings.html">
-                    <span class="glyphicon glyphicon-user"></span> 
+                <li><a href="./account-settings.html">
+                    <span class="account-icon"></span> 
                     Account Settings</a></li>
-                <li><a href="new-request.html">
+                <li><a href="./new-request.html">
                     <span class="glyphicon glyphicon-plus-sign"></span> 
                     New Request</a></li>
                 <li class="active"><a href="#"><span class="glyphicon glyphicon-list-alt"></span> Requests</a></li>
@@ -120,7 +120,9 @@
                                         <button type="button" class="btn btn-primary btn-sm view-details" data-toggle="modal" data-target="#myModal">
                                             <span class="glyphicon glyphicon-th"></span> View Details
                                         </button>
-                                        <a href="#" target="_blank" class="btn btn-warning btn-sm pay-btn">Payment Options</a>
+                                        <button type="button" class="btn btn-warning btn-sm pay-btn" data-toggle="modal" data-target="#mod_instructions">
+                                            Payment Options
+                                        </button>
                                         <a href="#" target="_blank" class="btn btn-danger cancel-btn">Cancel</a>
                                     </div>
                                 </td>
@@ -274,9 +276,9 @@
                         <div class="well">
                             <ul class="list-group">
                                 <li class="list-group-item"><b style="font-size:large">PUP Cashier</b></li>
-                                <li class="list-group-item"><span class="badge pull-left">1</span>&nbsp;Print the <b>Payment Voucher</b> after the submission of request.</li>
+                                <li class="list-group-item"><span class="badge pull-left">1</span>&nbsp;Print the <b><a style="text-decoration: underline; outline:none; color: #800000" href="#" target="_blank">Payment Voucher</a></b> after the submission of request.</li>
                                 <li class="list-group-item"><span class="badge pull-left">2</span>&nbsp;Pay at the <b>Cashier's Office</b> <small style="color:#999">(Main Building, Ground Floor South Wing)</small></li>
-                                <li class="list-group-item"><span class="badge pull-left">3</span>&nbsp;Go to the <b>Student Records Office</b> for the <u>Processing of Request/s</u> <small style="color:#999">(Main Building, Ground Floor South Wing)</small></li>
+                                <li class="list-group-item"><span class="badge pull-left">3</span>&nbsp;Go to the <b>Student Records Office</b> for the Processing of Request <small style="color:#999"><br>(Main Building, Ground Floor South Wing)</small></li>
                             </ul>
                         </div>
 
@@ -285,10 +287,9 @@
                         <div class="well">
                             <ul class="list-group">
                                 <li class="list-group-item"><b style="font-size:large">Link.BizPortal Payment</b></li>
-                                <li class="list-group-item"><span class="badge pull-left">1</span>&nbsp;<b>Login</b> to your Account and go to the <b>Requests List Page</b></li>
-                                <li class="list-group-item"><span class="badge pull-left">2</span>&nbsp;Click the Pay Online (Link.BizPortal) button.</li>
-                                <li class="list-group-item"><span class="badge pull-left">3</span>&nbsp;The payment will reflect to the system within the day</li>
-                                <li class="list-group-item"><span class="badge pull-left">4</span>&nbsp;For transaction made thru Pesonet and Cash Options, Payment will be posted 3 to 5 banking days</li>
+                                <li class="list-group-item"><span class="badge pull-left">1</span>&nbsp;Click here: <b><a style="text-decoration: underline; outline:none; color: #800000" href="#" target="_blank" outline="none">Link.BizPortal</a></b> and follow the instructions</li>
+                                <li class="list-group-item"><span class="badge pull-left">2</span>&nbsp;The payment will reflect to the system within the day</li>
+                                <li class="list-group-item"><span class="badge pull-left">3</span>&nbsp;For transaction made thru Pesonet and Cash Options, Payment will be posted 3 to 5 banking days</li>
                             </ul>
                         </div>
                     </div>
@@ -304,7 +305,6 @@
 </div>
 
 <footer>
-    <br><br>
     <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="box-shadow: 1px 1px 10px black;" id="div_footer">
         <div class="container" style="padding: 10px;">
             <div class="footer-text">
@@ -315,7 +315,22 @@
     </nav>
 </footer>
 
+<button type="button" id="footer-toggle" class="footer-toggle" aria-expanded="true" aria-controls="div_footer" title="Show or hide footer">
+    <span class="glyphicon glyphicon-collapse-down"></span>
+</button>
+
 <!-- scriptss-->
+<script>
+    $('#footer-toggle').on('click', function () {
+        var $footer = $('#div_footer');
+        $footer.toggleClass('footer-hidden');
+        var hidden = $footer.hasClass('footer-hidden');
+        $(this).attr('aria-expanded', !hidden);
+        $(this).find('.glyphicon')
+            .toggleClass('glyphicon-collapse-down', !hidden)
+            .toggleClass('glyphicon-collapse-up', hidden);
+    });
+</script>
 
 <!-- Sienna accessibility widget -->
 <script src="./js/requests.js" defer></script>
