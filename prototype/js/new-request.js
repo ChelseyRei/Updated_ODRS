@@ -553,21 +553,24 @@ function updateTotals() {
 	const checkedIDs = [...document.querySelectorAll(
 		".document-check:checked"
 	)].map(checkbox => checkbox.dataset.id);
+	const submitButton = document.getElementById('submissionArea');
 
-	console.log(checkedIDs);
+	if(checkedIDs.length) {
+		submitButton.hidden = false;
+	} else {
+		submitButton.hidden = true;
+	}
 
 	const level = getCurrentLevel();
 	
 	let stampTotal = 0;
 	let documentTotal = 0;
-	let grandTotal = 0;
 
 	for (const docId of checkedIDs) {
 		const details = credentialDetails[level]?.[docId] || {};
 		
 		const stampPrice =
 			documentStampFees[level]?.[docId] ?? 0;
-		console.log(stampPrice);
 
 		const quantityInput = document.querySelector(
         `.quantity-input[data-id="${docId}"]`
@@ -576,10 +579,6 @@ function updateTotals() {
 		stampTotal += stampPrice * quantityInput.valueAsNumber;
 		documentTotal += details.price * quantityInput.valueAsNumber;
 	}
-
-	console.log("Stamp Total:", stampTotal);
-	console.log("Document Total:", documentTotal);
-	console.log("Grand Total:", stampTotal + documentTotal);
 
 	const stampTotalElement = document.getElementById("stampTotal");
 	const documentTotalElement = document.getElementById("documentTotal");
@@ -597,3 +596,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	renderRows();
 });
+
+document.getElementById('requestForm').addEventListener('submit', function(event) {
+    // Prevent the default form reload
+    event.preventDefault(); 
+    
+    // This code ONLY runs if all 'required' fields are valid
+    window.location.href = './requests.html';
+  });
