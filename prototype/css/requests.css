@@ -36,7 +36,8 @@ details, footer, header, main, nav, summary { display: block; }
 [hidden], template { display: none; }
 
 a { background: transparent; color: #428bca; text-decoration: none; }
-a:active, a:hover { outline: 0; }
+a:active, a:hover { 
+    outline: 0; }
 a:hover, a:focus { color: #2a6496; text-decoration: underline; }
 a:focus { outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
 
@@ -728,7 +729,7 @@ button.close { -webkit-appearance: none; padding: 0; cursor: pointer; background
 .nav-pills > li > a:hover {
     background-color: white;
     color: #5c5c5c;
-    border-bottom-color: #800000;
+    border-bottom-color: #767676;
 }
 
 .nav-pills > li.active > a,
@@ -752,11 +753,11 @@ button.close { -webkit-appearance: none; padding: 0; cursor: pointer; background
 .nav-pills > li.active > a:active {
     background-color: #fff !important;
     color: #5c5c5c !important;
-    border-bottom-color: #800000;
+    border-bottom-color: #FEDD0B;
 }
 
 .nav-pills > li.active > a:hover {
-    background-color: #E3E3E3 !important;
+    background-color: #fff !important;
 }
 
 /* Requests table */
