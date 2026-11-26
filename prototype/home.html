@@ -13,21 +13,19 @@
     <script src="https://cdn.jsdelivr.net/npm/sienna-accessibility@latest/dist/sienna-accessibility.umd.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" aria-label="Primary Navigation">
-            <div class="navbar-container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="select-reg.html" id="brand-home-link">
-                        <span class="logo-icon" role="img" aria-hidden="true"></span>
-                        <span><strong>Online Document Request</strong></span>
-                    </a>
-                </div>
-                <div class="header-actions" id="header-actions">
-                    <button type="button" id="register-btn" class="header-register-btn">Register</button>
-                    <button type="button" id="login-btn" class="header-login-btn">Login</button>
-                </div>
+    <header class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="select-reg.html" id="brand-home-link">
+                    <span class="logo-icon" aria-hidden="true"></span>
+                    <strong>Online Document Request</strong>
+                </a>
             </div>
-        </nav>
+            <div class="header-actions" id="header-actions">
+                <button type="button" id="register-btn" class="header-register-btn">Register</button>
+                <button type="button" id="login-btn" class="header-login-btn">Login</button>
+            </div>
+        </div>
     </header>
 
     <main class="body" id="body">
@@ -43,9 +41,7 @@
                     <p class="branch-hero-contact"><em>For Concerns, email us at <span class="registrar-email">registrar@pup.edu.ph</span></em></p>
                     <p class="branch-hero-text">Request, Pay, Submit the Requirements, Monitor, and Claim.</p>
                     <div class="branch-hero-actions">
-                        <a href="#" class="instructions-btn" aria-disabled="true">
-                            <span>Read Instructions</span>
-                        </a>
+                        <a href="#instructions-page" id="read-instructions-btn" class="instructions-btn">Read Instructions</a>
                     </div>
                 </div>
 
@@ -58,10 +54,10 @@
                             </summary>
                             <div class="odrs-details-body">
                                 <p>
-                                    As part of our monitoring and evaluation, and to improve the quality of our system and services, 
-                                    all requests in the <strong>Online Document Request System (ODRS)</strong> with incomplete and 
-                                    invalid requirements shall be automatically deleted after <strong>90 days</strong> of noncompliance. 
-                                    Please be advised that the deletion from the system may be done without prior notice or approval from 
+                                    As part of our monitoring and evaluation, and to improve the quality of our system and services,
+                                    all requests in the <strong>Online Document Request System (ODRS)</strong> with incomplete and
+                                    invalid requirements shall be automatically deleted after <strong>90 days</strong> of noncompliance.
+                                    Please be advised that the deletion from the system may be done without prior notice or approval from
                                     the requesting client.
                                 </p>
                                 <p>Please be guided accordingly.</p>
@@ -76,9 +72,7 @@
                                 <span class="odrs-summary-caret" aria-hidden="true">▼</span>
                             </summary>
                             <div class="odrs-details-body">
-                                <p>
-                                    <strong><em>Watch this video to know the steps on how to pay online via Link.Biz Portal Payment</em></strong>
-                                </p>
+                                <p><strong><em>Watch this video to know the steps on how to pay online via Link.Biz Portal Payment</em></strong></p>
                                 <div class="video-box">
                                     <a href="https://www.facebook.com/ThePUPOfficial/videos/385774630279503" target="_blank" rel="noopener noreferrer" class="video-placeholder" aria-label="Watch video on how to pay online via Link.Biz Portal">
                                         <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>
@@ -96,58 +90,319 @@
                     <div class="col-md-4 branch-feature-col">
                         <div class="branch-feature-card">
                             <h2 class="branch-feature-title">Document Requesting</h2>
-                            <p class="branch-feature-desc">Requesting of documents is now available online. 
-                                Create an account and upload your photo to get an access to the Online Document Request Page</p>
-                            <button type="button" class="btn-success-token branch-details-btn">
-                                <span>View details</span>
-                            </button>
+                            <p class="branch-feature-desc">Requesting of documents is now available online. Create an account and upload your photo to get an access to the Online Document Request Page</p>
+                            <button type="button" class="btn-success-token branch-details-btn" data-toggle="modal" data-target="#mod_docDetails">View details</button>
                         </div>
                     </div>
                     <div class="col-md-4 branch-feature-col">
                         <div class="branch-feature-card">
                             <h2 class="branch-feature-title">Easy Payment</h2>
-                            <p class="branch-feature-desc">Payment of Document Request is easy. 
-                                Either through any LandBank Branch or through PUP Cashier's Office</p>
-                            <button type="button" class="btn-success-token branch-details-btn">
-                                <span>View details</span>
-                            </button>
+                            <p class="branch-feature-desc">Payment of Document Request is easy. Either through any LandBank Branch or through PUP Cashier's Office</p>
+                            <button type="button" class="btn-success-token branch-details-btn" data-toggle="modal" data-target="#mod_paymentOptions">View details</button>
                         </div>
                     </div>
                     <div class="col-md-4 branch-feature-col">
                         <div class="branch-feature-card">
                             <h2 class="branch-feature-title">Request Monitoring</h2>
-                            <p class="branch-feature-desc">Check the latest status updates on your request. 
-                                Easier communication when additional requirement is needed and notification when requested 
-                                documents are ready for pick-up</p>
-                            <button type="button" class="btn-success-token branch-details-btn">
-                                <span>View details</span>
-                            </button>
+                            <p class="branch-feature-desc">Check the latest status updates on your request. Easier communication when additional requirement is needed and notification when requested documents are ready for pick-up</p>
+                            <button type="button" class="btn-success-token branch-details-btn" data-toggle="modal" data-target="#modal_clearanceFlow">View details</button>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-    </main>
 
-    <footer class="footer-wrapper">
-        <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" id="div_footer" aria-label="Footer Navigation">
-            <div class="footer-container">
-                <div class="footer-text">
-                    <div>
-                        © 2026 Polytechnic University of the Philippines |
-                        <a href="https://www.pup.edu.ph/terms/" target="_blank" rel="noopener noreferrer">Terms of Use</a>
-                        |
-                        <a href="https://www.pup.edu.ph/privacy/" target="_blank" rel="noopener noreferrer">Privacy Statement</a>
+        <div id="instructions-page" class="instructions-container" style="display: none;">
+            <div class="panel-group odrs-accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default odrs-panel">
+                    <div class="odrs-panel-heading" role="tab" id="Div0">
+                        <h2 class="odrs-panel-title">
+                            <a class="odrs-accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseZero" aria-expanded="true" aria-controls="collapseZero">
+                                <span>Document Request Process Flow</span>
+                                <span class="odrs-panel-caret" aria-hidden="true">▼</span>
+                            </a>
+                        </h2>
                     </div>
-                    <div>
-                        Contact us at:
-                        <span class="footer-contact-text">5335-1787</span>
-                        local 285, 238, 389, 293, 740 ·
-                        <span class="footer-contact-text">Ground Flr., South Wing, Main Bldg., PUP Main Campus, Sta. Mesa, Manila</span>
+                    <div id="collapseZero" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="Div0">
+                        <div class="panel-body odrs-panel-body">
+                            <p class="odrs-overview-label"><em>Overview:</em></p>
+                            <ol class="odrs-overview-list">
+                                <li>Submission of Request</li>
+                                <li>Payment of Request</li>
+                                <li>Submission of Requirement/s (if applicable)</li>
+                                <li><em>Automated General Clearance</em></li>
+                                <li><em>Student Records Processing</em></li>
+                                <li><em>Releasing</em></li>
+                            </ol>
+                            <div class="odrs-download-actions">
+                                <button type="button" id="download-step-process-btn" class="odrs-download-btn">Download the Step-by-step Process</button>
+                                <button type="button" id="download-freshgrad-process-btn" class="odrs-download-btn">Download the Step-by-step Process (For Fresh Graduates)</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default odrs-panel">
+                    <div class="odrs-panel-heading" role="tab" id="headingOne">
+                        <h2 class="odrs-panel-title">
+                            <a class="collapsed odrs-accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <span>How to Request a Document</span>
+                                <span class="odrs-panel-caret" aria-hidden="true">▼</span>
+                            </a>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body odrs-panel-body">
+                            <ol class="odrs-guide-steps">
+                                <li>Create an account <span class="odrs-static-red-underline">here</span></li>
+                                <li><span class="odrs-static-red-underline">Login</span></li>
+                                <li>
+                                    After logging in, Click
+                                    <span class="odrs-inline-label">
+                                        "<img src="./assets/icons/new-request-icon.svg" alt="" class="odrs-inline-icon" aria-hidden="true">
+                                        <span>New Request</span>"
+                                    </span>
+                                    that will redirect you to Document Requesting Form. (or click
+                                    <span class="odrs-static-red-underline">Here</span>)
+                                </li>
+                                <li>Fill all the required fields and put a Check on the documents you want to request.</li>
+                                <li>Click <strong class="odrs-static-red">Submit</strong> to finalize the request.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default odrs-panel">
+                    <div class="odrs-panel-heading" role="tab" id="headingTwo">
+                        <h2 class="odrs-panel-title">
+                            <a class="collapsed odrs-accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span>How to view my Document Requests</span>
+                                <span class="odrs-panel-caret" aria-hidden="true">▼</span>
+                            </a>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body odrs-panel-body">
+                            <ol class="odrs-guide-steps">
+                                <li><span class="odrs-static-red-underline">Login</span></li>
+                                <li>
+                                    Click
+                                    <span class="odrs-inline-label">
+                                        "<img src="./assets/icons/requests-icon.svg" alt="" class="odrs-inline-icon" aria-hidden="true">
+                                        <span>Requests</span>"
+                                    </span>
+                                    to view all Requested Documents.
+                                </li>
+                                <li>You will now see all your Document Requests</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default odrs-panel">
+                    <div class="odrs-panel-heading" role="tab" id="headingThree">
+                        <h2 class="odrs-panel-title">
+                            <a class="collapsed odrs-accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <span>How to print my Payment Slip</span>
+                                <span class="odrs-panel-caret" aria-hidden="true">▼</span>
+                            </a>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body odrs-panel-body">
+                            <ol class="odrs-guide-steps">
+                                <li><span class="odrs-static-red-underline">Login</span></li>
+                                <li>
+                                    Click
+                                    <span class="odrs-inline-label">
+                                        "<img src="./assets/icons/requests-icon.svg" alt="" class="odrs-inline-icon" aria-hidden="true">
+                                        <span>Requests</span>"
+                                    </span>
+                                    to view all Requested Documents.
+                                </li>
+                                <li>
+                                    Look for the Request you want to print and click
+                                    <span class="odrs-inline-label">
+                                        "<img src="./assets/icons/claim-icon.svg" alt="" class="odrs-inline-icon" aria-hidden="true">
+                                        <span>Payment Voucher</span>"
+                                    </span>
+                                </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
-        </nav>
+
+            <div class="odrs-back-toolbar">
+                <button type="button" id="back-to-home-btn" class="odrs-back-btn">Back</button>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade" id="mod_docDetails" tabindex="-1" role="dialog" aria-labelledby="docDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title odrs-modal-title" id="docDetailsModalLabel">Document Requesting</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover odrs-doc-table" id="MainContent_GridViewDocs">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Documents Available for Online Request</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>(1st Copy) TOR (for board exam) + Certificate of Graduation.</td></tr>
+                                <tr><td>(1st Copy) TOR + Certificate of Graduation.</td></tr>
+                                <tr><td>CAV-CHED (Commission on Higher Education)</td></tr>
+                                <tr><td>CAV-DFA/Apostille - for UAE and Qatar (For Graduates)</td></tr>
+                                <tr><td>CAV-DFA/Apostille - for UAE and Qatar (For NON-Graduate)</td></tr>
+                                <tr><td>CAV-DFA/Apostille - Red Ribbon (For Graduates)</td></tr>
+                                <tr><td>CAV-DFA/Apostille - Red Ribbon (For Undergrad)</td></tr>
+                                <tr><td>CAV-DFA/Apostille - Red Ribbon (fresh grad w/o diploma)</td></tr>
+                                <tr><td>CAV-PRC</td></tr>
+                                <tr><td>Certificate of Grades (For Cross Enrollee)</td></tr>
+                                <tr><td>Certificate of Transfer Credential (Honorable Dismissal)</td></tr>
+                                <tr><td>Certificate of Units Earned</td></tr>
+                                <tr><td>Certification for NSTP Serial Number</td></tr>
+                                <tr><td>Certification of English as Medium of Instruction</td></tr>
+                                <tr><td>Certification of English as Medium of Instruction for Australia</td></tr>
+                                <tr><td>Certification of English as Medium of Instruction for Japan</td></tr>
+                                <tr><td>Certification of Enrollment/Attendance</td></tr>
+                                <tr><td>Certification of General Weighted Average (G.W.A.)</td></tr>
+                                <tr><td>Certification of Graduation</td></tr>
+                                <tr><td>Certification of Non-Issuance of Special Order (S.O.)</td></tr>
+                                <tr><td>Certification of Subject Description</td></tr>
+                                <tr><td>Certified True Copy of Diploma</td></tr>
+                                <tr><td>Certified True Copy of Transcript of Records</td></tr>
+                                <tr><td>Diploma - 1st Copy</td></tr>
+                                <tr><td>Diploma - 2nd Copy</td></tr>
+                                <tr><td>Diploma Replacement Copy</td></tr>
+                                <tr><td>Informative Copy of Grades / Certified Copy of Grades</td></tr>
+                                <tr><td>Other Special Requests</td></tr>
+                                <tr><td>Re-print Credentials / Counter Checking</td></tr>
+                                <tr><td>Retrieval of Unclaimed Request</td></tr>
+                                <tr><td>Special Certification required by Agency/gov't Offices</td></tr>
+                                <tr><td>Transcript of Records - Copy for (Graduated, 4 Year Program)</td></tr>
+                                <tr><td>Transcript of Records - Copy for (Graduated, 5 Year Program)</td></tr>
+                                <tr><td>Transcript of Records - Copy for (Undergraduate) 1st Year</td></tr>
+                                <tr><td>Transcript of Records - Copy for (Undergraduate) 2nd Year</td></tr>
+                                <tr><td>Transcript of Records - Copy for (Undergraduate) 3rd and 4th Year</td></tr>
+                                <tr><td>Transcript of Records - Copy for (Undergraduate) 5th Year</td></tr>
+                                <tr><td>Transcript of Records - For board/licensure exam (Graduated, 4 Year Program)</td></tr>
+                                <tr><td>Transcript of Records - For board/licensure exam (Graduated, 5 Year Program)</td></tr>
+                                <tr><td>Transcript of Records - For evaluation/reference (Graduated, 4 Year Program)</td></tr>
+                                <tr><td>Transcript of Records - For evaluation/reference (Graduated, 5 Year Program)</td></tr>
+                                <tr><td>Transcript of Records - For evaluation/reference (Undergraduate) 1st Year</td></tr>
+                                <tr><td>Transcript of Records - For evaluation/reference (Undergraduate) 2nd Year</td></tr>
+                                <tr><td>Transcript of Records - For evaluation/reference (Undergraduate) 3rd and 4th Year</td></tr>
+                                <tr><td>Transcript of Records - For evaluation/reference (Undergraduate) 5th Year</td></tr>
+                                <tr><td>WES Form, ICES Form, IQAS Form</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="mod_paymentOptions" tabindex="-1" role="dialog" aria-labelledby="paymentOptionsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title odrs-modal-title" id="paymentOptionsModalLabel">Payment Options</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="odrs-modal-lead"><em>Choose a payment option from the following:</em></p>
+
+                    <div class="odrs-payment-box">
+                        <div class="odrs-payment-box-title">PUP Cashier</div>
+                        <ol class="odrs-step-list">
+                            <li>Print the <strong>Payment Voucher</strong> after the submission of request.</li>
+                            <li>Pay at the <strong>Cashier's Office</strong> <span class="odrs-muted-inline">(Main Building, Ground Floor South Wing)</span></li>
+                            <li>Go to the <strong>Student Records Office</strong> for the Processing of Request/s <span class="odrs-muted-inline">(Main Building, Ground Floor South Wing)</span></li>
+                        </ol>
+                    </div>
+
+                    <div class="odrs-payment-or">OR</div>
+
+                    <div class="odrs-payment-box">
+                        <div class="odrs-payment-box-title">Link.BizPortal Payment</div>
+                        <ol class="odrs-step-list">
+                            <li><strong>Login</strong> to your Account and go to the <strong>Requests List Page</strong></li>
+                            <li>Click the Pay Online (Link.BizPortal) button.</li>
+                            <li>The payment will reflect to the system within the day</li>
+                            <li>For transaction made thru Pesonet and Cash Options, Payment will be posted 3 to 5 banking days</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal_clearanceFlow" tabindex="-1" role="dialog" aria-labelledby="clearanceFlowModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title odrs-modal-title" id="clearanceFlowModalLabel">Process Status Flow</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="odrs-flow-intro"><em>After <strong>Payment</strong> of Request,</em></p>
+                    <ol class="odrs-flow-list">
+                        <li>
+                            <span class="odrs-status-badge status-clearance">For Clearance</span>
+                            - The requester should settle the deficiency/ies to necessary office/s. Click "View Details" to view current Clearance's Status
+                        </li>
+                        <li>
+                            <span class="odrs-status-badge status-receiving">For Receiving</span>
+                            - The request is currently in Receiving Window and waiting for the client's submission of requirements
+                        </li>
+                        <li>
+                            <span class="odrs-status-badge status-evaluation">For Evaluation/Processing</span>
+                            - Evaluation and Processing of records and required documents for releasing.
+                        </li>
+                        <li>
+                            <span class="odrs-status-badge status-pickup">Ready for Pickup</span>
+                            - The requested document/s is/are already available for pickup at the releasing section of student records.
+                        </li>
+                        <li>
+                            <span class="odrs-status-badge status-released">✓ Released</span>
+                            - The requested document/s was/were claimed.
+                        </li>
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="navbar navbar-default navbar-fixed-bottom" id="div_footer">
+        <div class="footer-container">
+            <div class="footer-text">
+                <div>
+                    © 2026 Polytechnic University of the Philippines |
+                    <a href="https://www.pup.edu.ph/terms/" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+                    |
+                    <a href="https://www.pup.edu.ph/privacy/" target="_blank" rel="noopener noreferrer">Privacy Statement</a>
+                </div>
+                <div>
+                    Contact us at:
+                    <span class="footer-contact-text">5335-1787</span>
+                    local 285, 238, 389, 293, 740 ·
+                    <span class="footer-contact-text">Ground Flr., South Wing, Main Bldg., PUP Main Campus, Sta. Mesa, Manila</span>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
