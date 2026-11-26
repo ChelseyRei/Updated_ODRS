@@ -7,7 +7,7 @@ A human-computer interaction (HCI) project that proposes improvements to the Onl
 ## Team
 
 MEMBERS:
-Alenica Dela Crus
+Alenica Kariz Dela Cruz
 Chelsey Silva
 Gil Robert Mislang
 Hannah Rejuso
@@ -20,7 +20,7 @@ Fatima Santiago
 ├── docs/               Research, design, and planning documents
 │   ├── research/       Heuristic evaluation and personas
 │   ├── design/         User flows, design tokens, and wireframes
-│   └── figma-links.md  Links to the Figma design files
+│   └── design-links.md Links to the Canva and Figma design files
 └── prototype/          Front-end prototype
     ├── *.html          One page per feature area
     ├── css/            styles.css (shared) and responsive.css
@@ -38,7 +38,7 @@ For the best results, use Chrome or Edge. To test responsiveness, use the browse
 ## Contributing
 
 1. Pull the latest changes from `dev`.
-2. Create a feature branch from `dev`, for example `feature/registration-login`.
+2. Create a feature branch from `dev`, for example `feature/chels.
 3. Make your changes and commit them with a clear message.
 4. Push your branch and open a pull request into `dev`.
 5. Ask a teammate to review before merging.
@@ -49,7 +49,11 @@ Do not commit directly to `main`.
 
 - `main`: Final, submitted version
 - `dev`: Integration branch where feature work is merged
-- `feature/*`: One branch per team member or task
+- `feature/<name>`: One branch per team member, created from `dev`.
+
+Use your first name in lowercase for your branch
+
+Create your branch from `dev`, not from `main`.
 
 ## Notes
 

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+  <defs>
+    <mask id="card-holes">
+      <rect width="24" height="24" fill="#fff"/>
+      <rect x="0" y="7.6" width="24" height="2.4" fill="#000"/>
+      <rect x="2" y="14.4" width="5.2" height="0.7" fill="#000"/>
+      <rect x="2" y="16.5" width="7.3" height="0.7" fill="#000"/>
+      <rect x="18.7" y="14.4" width="2.6" height="2.6" rx="0.4" fill="#000"/>
+    </mask>
+  </defs>
+  <rect x="0" y="4.7" width="24" height="14.6" rx="1.8" mask="url(#card-holes)"/>
+</svg>

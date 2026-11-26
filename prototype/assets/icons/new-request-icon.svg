@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 460">
+  <defs>
+    <mask id="plus-cut">
+      <rect width="460" height="460" fill="#fff"/>
+      <path d="M230 115V346M114 230H346" stroke="#000" stroke-width="46" stroke-linecap="round"/>
+    </mask>
+  </defs>
+  <circle cx="230" cy="230" r="230" fill="currentColor" mask="url(#plus-cut)"/>
+</svg>

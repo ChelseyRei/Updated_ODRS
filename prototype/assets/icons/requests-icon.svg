@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 84 445 396" fill="currentColor">
+  <defs>
+    <mask id="requests-lines">
+      <rect x="0" y="0" width="600" height="600" fill="#fff"/>
+      <rect x="165" y="120" width="90" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="155" width="147" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="202" width="245" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="242" width="245" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="281" width="245" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="319" width="245" height="16" rx="8" fill="#000"/>
+      <rect x="321" y="359" width="89" height="16" rx="8" fill="#000"/>
+    </mask>
+  </defs>
+  <path mask="url(#requests-lines)" d="M140 55H362V130H437V443H140Z"/>
+  <path d="M380 68V112H425Z"/>
+  <path d="M48 130L78 117L111 268Z"/>
+  <path d="M90 100L122 92L121 240Z"/>
+  <path d="M178 460L232 462L180 472Z"/>
+  <path d="M464 327L475 356L464 352Z"/>
+  <path d="M454 358L465 358L455 406Z"/>
+</svg>
