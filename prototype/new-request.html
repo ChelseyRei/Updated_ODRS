@@ -1,62 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Online Document Request System interface demo">
-    <title>Online Document Request System</title>
-    <link rel="stylesheet" href="./css/new-request.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link href="./css/requests.css" rel="stylesheet">
-    <link href="./css/new-request.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Request | Online Document Request System</title>
+ <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/settings.css">
+<link rel="stylesheet" href="css/new-request.css">
+<link rel="stylesheet" href="css/responsive.css">
 </head>
-
 <body>
-    <header>
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation"
-            style="border-bottom: solid 2px #808080; box-shadow: 1px 1px 5px">
-            <div class="container">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#">
-                            <img src="./assets/icons/system-logo-icon.svg" alt="Logo" style="height: 30px; filter: brightness(0) saturate(100%) invert(11%) sepia(83%) saturate(4736%) hue-rotate(354deg) brightness(62%) contrast(113%);">
-                            <span>Online Document Request</span>
-                        </a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <button type="button" class="btn btn-danger navbar-btn">
-                                <img src="./assets/icons/logout-icon.svg" alt="Logout"
-                                    style="height: 20px; margin-right: 5px;  filter: brightness(0) invert(1);">
-                                Logout</button>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <main class="page-shell">
-        <br><br><br>
-        <nav class="main-nav" aria-label="Main navigation">
-            <div class="col-sm-12 col-md-12" style="margin-top:-20px; margin-bottom:-3px">
-                <ul class="nav nav-pills panel">
-                    <li><a href="settings.html">
-                            <span class="account-icon"></span>
-                            Account Settings</a></li>
-                    <li class="active"><a href="#"><span class="glyphicon glyphicon-plus-sign"></span> New Request</a>
-                    </li>
-                    <li><a href="requests.html">
-                            <span class="glyphicon glyphicon-list-alt"></span>
-                            Requests</a></li>
-                </ul>
-            </div>
-        </nav>
+<!-- Icon sprite. The shapes match the files in assets/icons/. They are inline so they take the page colors. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="logo-holes">
+      <rect width="24" height="24" fill="#fff"/>
+      <path d="M13.9 1.6V6.2Q13.9 7.1 14.8 7.1H19.2Q19.8 7.1 19.4 6.6L14.5 1.7Q13.9 1.1 13.9 1.6Z" fill="#000"/>
+      <rect x="6" y="10.15" width="12" height="1.5" rx="0.75" fill="#000"/>
+      <rect x="6" y="13.15" width="12" height="1.5" rx="0.75" fill="#000"/>
+      <rect x="6" y="16.15" width="12" height="1.5" rx="0.75" fill="#000"/>
+      <rect x="6" y="19.15" width="12" height="1.5" rx="0.75" fill="#000"/>
+    </mask>
+    <mask id="plus-cut">
+      <rect width="460" height="460" fill="#fff"/>
+      <path d="M230 115V346M114 230H346" stroke="#000" stroke-width="46" stroke-linecap="round"/>
+    </mask>
+    <mask id="requests-lines">
+      <rect x="0" y="0" width="600" height="600" fill="#fff"/>
+      <rect x="165" y="120" width="90" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="155" width="147" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="202" width="245" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="242" width="245" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="281" width="245" height="16" rx="8" fill="#000"/>
+      <rect x="165" y="319" width="245" height="16" rx="8" fill="#000"/>
+      <rect x="321" y="359" width="89" height="16" rx="8" fill="#000"/>
+    </mask>
+  </defs>
 
+  <symbol id="icon-logo" viewBox="0 0 24 24" fill="currentColor">
+    <path mask="url(#logo-holes)" d="M13.2 0L19.4 4.5Q21 5.8 21 7.8V22Q21 24 19 24H5Q3 24 3 22V2Q3 0 5 0Z"/>
+  </symbol>
+  <symbol id="icon-plus" viewBox="0 0 460 460">
+    <circle cx="230" cy="230" r="230" fill="currentColor" mask="url(#plus-cut)"/>
+  </symbol>
+  <symbol id="icon-requests" viewBox="40 84 445 396" fill="currentColor">
+    <path mask="url(#requests-lines)" d="M140 55H362V130H437V443H140Z"/>
+    <path d="M380 68V112H425Z"/>
+    <path d="M48 130L78 117L111 268Z"/>
+    <path d="M90 100L122 92L121 240Z"/>
+    <path d="M178 460L232 462L180 472Z"/>
+    <path d="M464 327L475 356L464 352Z"/>
+    <path d="M454 358L465 358L455 406Z"/>
+  </symbol>
+  <symbol id="icon-person" viewBox="0 0 24 24" fill="currentColor">
+    <circle cx="12" cy="6.5" r="6.5"/>
+    <path d="M0 24C0 17.5 3.5 14.2 8 12.8Q12 14.8 16 12.8C20.5 14.2 24 17.5 24 24Z"/>
+  </symbol>
+  <symbol id="icon-avatar" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4.5">
+    <circle cx="50" cy="32" r="20"/>
+    <path d="M12 100C12 72 28 60 50 60C72 60 88 72 88 100"/>
+  </symbol>
+  <symbol id="icon-logout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.5 3.7V1.2H1.2V22.8H14.5V20.3"/>
+    <path d="M6.2 12H22.8M18.1 7.3L22.8 12L18.1 16.9"/>
+  </symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <circle cx="9.9" cy="9.9" r="8.8"/>
+    <path d="M16.6 16.6L22.6 22.6" stroke-width="2.2"/>
+  </symbol>
+  <symbol id="icon-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 18.2V1.4M2.2 8L12 1.4L21.8 8"/>
+    <path d="M0.75 18V20.8A2.2 2.2 0 0 0 2.95 23H21.05A2.2 2.2 0 0 0 23.25 20.8V18"/>
+  </symbol>
+  <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 1.2V17.2M2.5 10.2L12 17.2L21.5 10.2"/>
+    <path d="M0.75 18V20.8A2.2 2.2 0 0 0 2.95 23H21.05A2.2 2.2 0 0 0 23.25 20.8V18"/>
+  </symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+    <path d="M5 5L19 19M19 5L5 19"/>
+  </symbol>
+</svg>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="app-header">
+  <div class="container container-wide app-header-inner">
+    <a class="brand" href="index.html">
+      <svg class="icon brand-logo" aria-hidden="true"><use href="#icon-logo"/></svg>
+      <span>Online Document Request System</span>
+    </a>
+    <a class="btn-logout" href="index.html">
+      <svg class="icon" aria-hidden="true"><use href="#icon-logout"/></svg>
+      <span>Log out</span>
+    </a>
+  </div>
+</header>
+
+<nav class="container container-wide tabs" aria-label="Account navigation">
+  <a class="tab" href="new-request.html" aria-current="page">
+    <svg class="icon" aria-hidden="true"><use href="#icon-plus"/></svg>
+    New Request
+  </a>
+  <a class="tab" href="requests.html">
+    <svg class="icon" aria-hidden="true"><use href="#icon-requests"/></svg>
+    Requests
+  </a>
+  <a class="tab" href="settings.html">
+    <svg class="icon" aria-hidden="true"><use href="#icon-person"/></svg>
+    Account Settings
+  </a>
+</nav>
+    <main id="main" class="container container-wide">
         <div class="col-sm-12 col-md-12">
             <section class="request-panel" id="new-request">
                 <div class="panel-heading">New Request</div>
@@ -766,7 +821,7 @@
                         <div class="three-column last-term-row">
                             <div class="field-group">
                                 <span class="last-term-label">Last Term</span>
-                                <label for="schoolYear" style="width: 97%; margin-left: 10px;">School Year:<b>*</b></label>
+                                <label for="schoolYear">School Year:<b>*</b></label>
                                 <select id="schoolYear" required>
                                     <option value="">SELECT</option>
                                     <option value="2026 - 2027">2026 - 2027</option>
@@ -961,10 +1016,10 @@
                                 <table class="documents-table">
                                     <thead>
                                         <tr>
-                                            <th>Document (Click the document/s you want to request)</th>
-                                            <th>Quantity</th>
-                                            <th>Processing Time</th>
-                                            <th>Price</th>
+                                            <th style="width: 64%;">Document (Click the document/s you want to request)</th>
+                                            <th style="width: 12%;">Quantity</th>
+                                            <th style="width: 12%;">Processing Time</th>
+                                            <th style="width: 12%;">Price</th>
                                         </tr>
                                     </thead>
                                     <tbody id="documentRows">
