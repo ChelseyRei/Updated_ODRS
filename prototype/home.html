@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Online Document Request</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/portal.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js" defer></script>
+    <script src="./js/portal.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sienna-accessibility@latest/dist/sienna-accessibility.umd.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" aria-label="Primary Navigation">
+            <div class="navbar-container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="select-reg.html" id="brand-home-link">
+                        <span class="logo-icon" role="img" aria-hidden="true"></span>
+                        <span><strong>Online Document Request</strong></span>
+                    </a>
+                </div>
+                <div class="header-actions" id="header-actions">
+                    <button type="button" id="register-btn" class="header-register-btn">Register</button>
+                    <button type="button" id="login-btn" class="header-login-btn">Login</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="body" id="body">
+        <div id="branch">
+            <section class="branch-jumbotron">
+                <img src="./assets/images/03-DroneShot.jpg" alt="" class="branch-banner-img" aria-hidden="true">
+                <div class="branch-banner-overlay" aria-hidden="true"></div>
+
+                <div class="branch-hero-header">
+                    <h1 class="branch-hero-title">Request Documents Online!</h1>
+                    <p class="branch-hero-subtitle" id="selected-branch-name">For Students and Graduates of PUP Sta. Mesa, Manila (Main)</p>
+                    <p class="branch-hero-subtext" id="selected-branch-subtext">(Bachelor Degree / Traditional Undergrad)</p>
+                    <p class="branch-hero-contact"><em>For Concerns, email us at <span class="registrar-email">registrar@pup.edu.ph</span></em></p>
+                    <p class="branch-hero-text">Request, Pay, Submit the Requirements, Monitor, and Claim.</p>
+                    <div class="branch-hero-actions">
+                        <a href="#" class="instructions-btn" aria-disabled="true">
+                            <span>Read Instructions</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row bottom advisory-row">
+                    <div class="col-md-6 col-lg-6 text-center advisory-col">
+                        <details class="alert alert-danger">
+                            <summary class="odrs-summary">
+                                <em>ADVISORY TO OUR CLIENTS</em>
+                                <span class="odrs-summary-caret" aria-hidden="true">▼</span>
+                            </summary>
+                            <div class="odrs-details-body">
+                                <p>
+                                    As part of our monitoring and evaluation, and to improve the quality of our system and services, 
+                                    all requests in the <strong>Online Document Request System (ODRS)</strong> with incomplete and 
+                                    invalid requirements shall be automatically deleted after <strong>90 days</strong> of noncompliance. 
+                                    Please be advised that the deletion from the system may be done without prior notice or approval from 
+                                    the requesting client.
+                                </p>
+                                <p>Please be guided accordingly.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="col-md-6 col-lg-6 text-center payment-col">
+                        <details class="alert alert-success">
+                            <summary class="odrs-summary">
+                                <em>HOW TO PAY ONLINE VIA LINK.BIZ PORTAL</em>
+                                <span class="odrs-summary-caret" aria-hidden="true">▼</span>
+                            </summary>
+                            <div class="odrs-details-body">
+                                <p>
+                                    <strong><em>Watch this video to know the steps on how to pay online via Link.Biz Portal Payment</em></strong>
+                                </p>
+                                <div class="video-box">
+                                    <a href="https://www.facebook.com/ThePUPOfficial/videos/385774630279503" target="_blank" rel="noopener noreferrer" class="video-placeholder" aria-label="Watch video on how to pay online via Link.Biz Portal">
+                                        <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>
+                                        <span>Watch Link.Biz Portal Payment Guide</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+            <section class="branch-features-section" aria-label="Portal Features">
+                <div class="row branch-features-row">
+                    <div class="col-md-4 branch-feature-col">
+                        <div class="branch-feature-card">
+                            <h2 class="branch-feature-title">Document Requesting</h2>
+                            <p class="branch-feature-desc">Requesting of documents is now available online. 
+                                Create an account and upload your photo to get an access to the Online Document Request Page</p>
+                            <button type="button" class="btn-success-token branch-details-btn">
+                                <span>View details</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 branch-feature-col">
+                        <div class="branch-feature-card">
+                            <h2 class="branch-feature-title">Easy Payment</h2>
+                            <p class="branch-feature-desc">Payment of Document Request is easy. 
+                                Either through any LandBank Branch or through PUP Cashier's Office</p>
+                            <button type="button" class="btn-success-token branch-details-btn">
+                                <span>View details</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 branch-feature-col">
+                        <div class="branch-feature-card">
+                            <h2 class="branch-feature-title">Request Monitoring</h2>
+                            <p class="branch-feature-desc">Check the latest status updates on your request. 
+                                Easier communication when additional requirement is needed and notification when requested 
+                                documents are ready for pick-up</p>
+                            <button type="button" class="btn-success-token branch-details-btn">
+                                <span>View details</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" id="div_footer" aria-label="Footer Navigation">
+            <div class="footer-container">
+                <div class="footer-text">
+                    <div>
+                        © 2026 Polytechnic University of the Philippines |
+                        <a href="https://www.pup.edu.ph/terms/" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+                        |
+                        <a href="https://www.pup.edu.ph/privacy/" target="_blank" rel="noopener noreferrer">Privacy Statement</a>
+                    </div>
+                    <div>
+                        Contact us at:
+                        <span class="footer-contact-text">5335-1787</span>
+                        local 285, 238, 389, 293, 740 ·
+                        <span class="footer-contact-text">Ground Flr., South Wing, Main Bldg., PUP Main Campus, Sta. Mesa, Manila</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </footer>
+</body>
+</html>
