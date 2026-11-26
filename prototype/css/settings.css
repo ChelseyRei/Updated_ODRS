@@ -77,7 +77,7 @@
 
 /* Page title bar */
 main.container {
-  padding-bottom: var(--space-lg);
+  padding-bottom: calc(var(--footer-height, 90px) + var(--space-lg));
 }
 
 .page-bar {

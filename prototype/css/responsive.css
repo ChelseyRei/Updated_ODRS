@@ -1,4 +1,8 @@
 /* ---------- Phones (below 576px) ---------- */
+.app-footer {
+  padding-left: 64px;
+  padding-right: 64px;
+}
 
 .app-header-inner {
   flex-wrap: nowrap;
@@ -100,6 +104,11 @@
 }
 
 /* ---------- Tablet and up (576px and wider) ---------- */
+ .app-footer {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
 @media (min-width: 576px) {
   /* Home page: two registrars per row */
   .registrar-list {

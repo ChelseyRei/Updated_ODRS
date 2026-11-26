@@ -386,3 +386,64 @@ h2 {
   font-weight: bold;
   font-size: 1.2rem;
 }
+
+.app-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-background);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.3);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.app-footer.footer-hidden {
+  display: none;
+}
+
+.app-footer p {
+  margin: 0;
+}
+
+.app-footer a {
+  color: var(--color-primary);
+}
+
+.footer-toggle {
+  position: fixed;
+  right: var(--space-md);
+  bottom: calc(var(--footer-height, 90px) + var(--space-sm));
+  z-index: 1001;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* When the footer is hidden, the button drops to the bottom corner */
+.footer-toggle[aria-expanded="false"] {
+  bottom: var(--space-md);
+}
+
+.footer-toggle-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s;
+}
+
+/* The arrow points up when the footer is hidden */
+.footer-toggle[aria-expanded="false"] .footer-toggle-icon {
+  transform: rotate(180deg);
+}
