@@ -2,8 +2,8 @@ $(function () {
     var STORAGE_BRANCH_KEY = 'odrsSelectedBranch';
     var STORAGE_SUBTEXT_KEY = 'odrsSelectedSubtext';
     var isHomePage = $('#branch').length > 0;
+    var isInstructionsPage = $('#instructions-page').length > 0;
     var step1FooterVisible = true;
-    var homeManualFooterOverride = null;
 
     function applyFooterVisibility(show) {
         $('#div_footer').toggleClass('footer-hidden', !show);
@@ -15,8 +15,8 @@ $(function () {
             return;
         }
 
-        if (homeManualFooterOverride !== null) {
-            applyFooterVisibility(homeManualFooterOverride);
+        if ($('#instructions-page').is(':visible')) {
+            applyFooterVisibility(true);
             return;
         }
 
@@ -27,6 +27,28 @@ $(function () {
         var nearBottom = (scrollTop + windowHeight) >= (docHeight - 120);
 
         applyFooterVisibility(hasScrollableContent && nearBottom);
+    }
+
+    function showInstructionsView(show) {
+        if (!isHomePage || !isInstructionsPage) {
+            return;
+        }
+
+        $('#branch').toggle(!show);
+        $('#instructions-page').toggle(show);
+        $(window).scrollTop(0);
+        updateHomeFooterByScroll();
+    }
+
+    function syncAccordionCarets($target, isExpanded) {
+        var selector = $target && $target.length
+            ? '[href="#' + $target.attr('id') + '"], [data-target="#' + $target.attr('id') + '"]'
+            : '.odrs-accordion-toggle';
+
+        $('.odrs-accordion-toggle')
+            .filter(selector)
+            .toggleClass('collapsed', !isExpanded)
+            .attr('aria-expanded', isExpanded);
     }
 
     function hydrateSelectedBranch() {
@@ -49,48 +71,37 @@ $(function () {
         }
     }
 
-    function setPanelCollapsed($card, collapsed, instant, onComplete) {
-        $card.toggleClass('is-collapsed', collapsed);
-        $card.find('.panel-header-btn').attr('aria-expanded', !collapsed);
-
-        var $body = $card.find('.panel-card-body');
-        if (instant) {
-            $body.stop(true, true).toggle(!collapsed);
-            if (typeof onComplete === 'function') {
-                onComplete();
-            }
-            return;
-        }
-
-        if (collapsed) {
-            $body.stop(true, true).slideUp(180, onComplete);
-        } else {
-            $body.stop(true, true).slideDown(180, onComplete);
-        }
-    }
-
     function resetBranchPanelsToHidden() {
         $('.advisory-row details').prop('open', false);
-        $('.advisory-row .warning-panel-card, .advisory-row .payment-panel-card').each(function () {
-            setPanelCollapsed($(this), true, true);
-        });
-    }
-
-    function toggleSampleVideoPreview(showInfo) {
-        var $player = $('#sample-linkbiz-player');
-        if (!$player.length) {
-            return;
-        }
-        $player.find('.sample-video-overlay').toggle(!showInfo);
-        $player.find('.sample-video-info').toggle(!!showInfo);
     }
 
     function bindEvents() {
+        $('#read-instructions-btn').on('click', function (e) {
+            if ($('#instructions-page').length) {
+                e.preventDefault();
+                showInstructionsView(true);
+            }
+        });
+
+        $('#back-to-home-btn').on('click', function () {
+            showInstructionsView(false);
+        });
+
+        $('.odrs-accordion').on('shown.bs.collapse', '.panel-collapse', function () {
+            syncAccordionCarets($(this), true);
+            updateHomeFooterByScroll();
+        });
+
+        $('.odrs-accordion').on('hidden.bs.collapse', '.panel-collapse', function () {
+            syncAccordionCarets($(this), false);
+            updateHomeFooterByScroll();
+        });
+
         $('#registrar-toggle-btn').on('click', function () {
             var $btn = $(this);
             var nextExpanded = $btn.attr('aria-expanded') !== 'true';
             $btn.attr('aria-expanded', nextExpanded);
-            $('#registrar-list').stop(true, true).slideToggle(180, updateHomeFooterByScroll);
+            $('#registrar-list').stop(true, true).slideToggle(180);
         });
 
         $('.registrar-link').on('click', function () {
@@ -117,43 +128,7 @@ $(function () {
             $btn.toggleClass('is-selected', isSelected).attr('aria-pressed', isSelected);
         });
 
-        $('.document-filter-item').on('click', function () {
-            var $item = $(this);
-            $item.siblings('.document-filter-item').removeClass('is-selected').attr('aria-pressed', 'false');
-            $item.addClass('is-selected').attr('aria-pressed', 'true');
-        });
-
-        $('.panel-header-btn').on('click', function () {
-            var $card = $(this).closest('.warning-panel-card, .payment-panel-card');
-            setPanelCollapsed($card, !$card.hasClass('is-collapsed'), false, updateHomeFooterByScroll);
-        });
-
         $('.advisory-row').on('toggle', 'details', updateHomeFooterByScroll);
-
-        $('#sample-linkbiz-player').on('click keydown', function (e) {
-            if ($(e.target).closest('.close-sample-preview, .watch-video-link').length) {
-                return;
-            }
-            if (e.type === 'keydown') {
-                if (e.key !== 'Enter' && e.key !== ' ') {
-                    return;
-                }
-                e.preventDefault();
-            }
-            var $player = $(this);
-            var videoUrl = $player.find('.watch-video-link').attr('href');
-            if ($player.find('.sample-video-info').is(':hidden')) {
-                if (videoUrl) {
-                    window.open(videoUrl, '_blank', 'noopener,noreferrer');
-                }
-                toggleSampleVideoPreview(true);
-            }
-        });
-
-        $('.close-sample-preview').on('click', function (e) {
-            e.stopPropagation();
-            toggleSampleVideoPreview(false);
-        });
 
         $(window).on('scroll resize', function () {
             if (isHomePage) {
@@ -165,12 +140,11 @@ $(function () {
     }
 
     function init() {
-        $('#header-actions').toggle(isHomePage);
+        $('#header-actions').toggle(isHomePage || isInstructionsPage);
 
         if (isHomePage) {
             hydrateSelectedBranch();
             resetBranchPanelsToHidden();
-            toggleSampleVideoPreview(false);
             updateHomeFooterByScroll();
         } else {
             applyFooterVisibility(step1FooterVisible);
