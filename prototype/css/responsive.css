@@ -1,11 +1,212 @@
-/* Tablet and up (576px and wider) */
+/* ---------- Phones (below 576px) ---------- */
+.app-footer {
+  padding-left: 64px;
+  padding-right: 64px;
+}
+
+.app-header-inner {
+  flex-wrap: nowrap;
+  gap: var(--space-sm);
+}
+
+.brand {
+  min-width: 0;
+  font-size: var(--font-size-small);
+  line-height: 1.25;
+}
+
+.brand-logo {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+}
+
+.btn-logout {
+  flex-shrink: 0;
+  padding: 0 var(--space-sm);
+  font-size: var(--font-size-small);
+}
+
+.tabs {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding-top: var(--space-sm);
+}
+
+.tab {
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
+  gap: 4px;
+  font-size: var(--font-size-small);
+  line-height: 1.25;
+  text-align: center;
+}
+
+.tab .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.profile {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-sm);
+}
+
+.profile > div:first-child {
+  min-width: 0;
+}
+
+.profile-name {
+  font-size: 22px;
+  overflow-wrap: anywhere;
+}
+
+.profile-meta {
+  font-size: var(--font-size-small);
+}
+
+.photo {
+  flex-shrink: 0;
+  width: 140px;
+  margin: 0;
+}
+
+.settings-grid {
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.info-list {
+  font-size: var(--font-size-small);
+}
+
+.date-row {
+  grid-template-columns: 1fr 1fr;
+}
+
+.date-row select:first-child {
+  grid-column: 1 / -1;
+}
+
+.input-pair {
+  grid-template-columns: 1fr;
+}
+
+.dialog-head,
+.dialog-foot,
+.dialog-body {
+  padding: var(--space-md);
+}
+
+/* ---------- Tablet and up (576px and wider) ---------- */
+ .app-footer {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
 @media (min-width: 576px) {
+  /* Home page: two registrars per row */
   .registrar-list {
     grid-template-columns: 1fr 1fr;
   }
+
+  .app-header-inner {
+    gap: var(--space-sm) var(--space-md);
+  }
+
+  .brand {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height);
+  }
+
+  .brand-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .btn-logout {
+    padding: 0 var(--space-md);
+    font-size: var(--font-size-base);
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: var(--space-sm) var(--space-lg);
+    padding-top: var(--space-md);
+  }
+
+  .tab {
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    gap: var(--space-sm);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height);
+    text-align: left;
+  }
+
+  .tab .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .profile {
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  .profile-name {
+    font-size: var(--font-size-heading-mobile);
+  }
+
+  .profile-meta {
+    font-size: var(--font-size-base);
+  }
+
+  .info-list {
+    font-size: var(--font-size-base);
+  }
+
+  .settings-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .panel-password {
+    grid-column: 1 / -1;
+  }
+
+  .dialog .field {
+    grid-template-columns: 170px 1fr;
+    align-items: center;
+    gap: var(--space-sm) var(--space-md);
+  }
+
+  .date-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .date-row select:first-child {
+    grid-column: auto;
+  }
+
+  .input-pair {
+    grid-template-columns: 1fr 110px;
+  }
+
+  .dialog-head,
+  .dialog-foot,
+  .dialog-body {
+    padding: var(--space-md) var(--space-lg);
+  }
 }
 
-/* Desktop (992px and wider) */
+/* ---------- Desktop (992px and wider) ---------- */
 @media (min-width: 992px) {
   .header-inner {
     flex-direction: row;
@@ -19,40 +220,15 @@
 
   .card {
     max-width: 640px;
-  }
-}
-
-/* Tablet and up (576px and wider) */
-@media (min-width: 576px) {
-  .profile {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    margin: 0 auto;
   }
 
-  .photo-box {
-    width: 180px;
-    margin: 0;
-  }
-
-  .settings-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .panel-password {
-    grid-column: 1 / -1;
-  }
-}
-
-/* Desktop (992px and wider) */
-@media (min-width: 992px) {
-  .profile h1 {
+  .profile-name {
     font-size: var(--font-size-heading);
   }
 
   .settings-grid {
     grid-template-columns: repeat(3, 1fr);
-    align-items: start;
   }
 
   .panel-password {

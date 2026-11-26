@@ -32,6 +32,11 @@
   --space-lg: 24px;
   --space-heading-top: 20px;
   --space-heading-bottom: 10px;
+
+    /* Settings page */
+  --color-input-bg: #FDE3E3;
+  --color-soft-bg: #F5F5F5;
+  --color-overlay: rgba(128, 0, 0, 0.5);
 }
 
 /* Base */
@@ -279,266 +284,20 @@ h2 {
   color: var(--color-text);
 }
 
-/* Tabs (logged-in navigation) */
-.tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm) var(--space-lg);
-  padding-top: var(--space-md);
-  border-bottom: 1px solid var(--color-surface);
-}
-
-.tab {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  color: var(--color-text);
-  text-decoration: none;
-  border-bottom: 3px solid transparent;
-}
-
-.tab:hover {
-  border-bottom-color: var(--color-primary);
-}
-
-.tab[aria-current="page"] {
-  font-weight: bold;
-  border-bottom-color: var(--color-primary);
-}
-
-/* Account settings page */
-.settings {
-  padding-top: var(--space-lg);
+/* Shared icon and visibility helpers */
+[hidden] {
+  display: none !important;
 }
 
 .icon {
   width: 24px;
   height: 24px;
+  flex-shrink: 0;
 }
 
-.profile {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  padding: var(--space-md);
-  background: var(--color-surface);
-  border-radius: 8px;
-}
-
-.profile h1 {
-  margin: 0;
-  font-size: var(--font-size-heading-mobile);
-}
-
-.profile-meta {
-  margin: 0;
-  color: var(--color-text-muted);
-}
-
-.photo-box {
-  position: relative;
-  width: 160px;
-  margin: 0 auto;
-}
-
-.avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 1 / 1;
-  background: var(--color-background);
-  border: 2px solid var(--color-text-muted);
-  border-radius: 6px;
-  color: var(--color-text-muted);
-}
-
-.avatar .icon {
-  width: 60%;
-  height: 60%;
-}
-
-.avatar-large {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-.photo-zoom {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
-  border: none;
-  border-radius: 6px;
-  background: var(--color-background);
-  color: var(--color-text);
-  cursor: pointer;
-}
-
-.photo-actions {
-  display: flex;
-  gap: var(--space-sm);
-  margin-top: var(--space-sm);
-}
-
-.photo-actions .btn {
-  flex: 1;
-}
-
-.btn-small {
-  min-height: 44px;
-  padding: 0 var(--space-sm);
-}
-
-.settings-grid {
-  display: grid;
-  gap: var(--space-md);
-  margin-top: var(--space-lg);
-}
-
-.panel {
-  padding: var(--space-md);
-  background: var(--color-background);
-  border: 1px solid var(--color-surface);
-  border-radius: 8px;
-}
-
-.panel-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-md);
-  padding-bottom: var(--space-sm);
-  border-bottom: 1px solid var(--color-surface);
-}
-
-.panel-head h2 {
-  margin: 0;
-  font-size: var(--font-size-base);
-}
-
-/* Label above value, so nothing needs to scroll sideways on a phone */
-.info-list {
-  display: grid;
-  gap: var(--space-md);
-  margin: 0;
-}
-
-.info-list dt {
-  font-size: var(--font-size-small);
-  color: var(--color-text-muted);
-}
-
-.info-list dd {
-  margin: 2px 0 0;
-  font-weight: bold;
-  overflow-wrap: anywhere;
-}
-
-/* Forms */
-.form {
-  display: grid;
-  gap: var(--space-md);
-}
-
-.form label {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-weight: bold;
-}
-
-.form input,
-.form textarea {
-  width: 100%;
-  min-height: 44px;
-  padding: 8px 12px;
-  font: inherit;
-  font-weight: normal;
-  color: var(--color-text);
-  background: var(--color-background);
-  border: 2px solid var(--color-text-muted);
-  border-radius: 6px;
-}
-
-.form textarea {
-  min-height: 88px;
-  resize: vertical;
-}
-
-.choice {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm) var(--space-md);
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-.choice legend {
-  margin-bottom: var(--space-sm);
-  padding: 0;
-  font-weight: bold;
-}
-
-.form .choice-option {
-  flex-direction: row;
-  align-items: center;
-  gap: var(--space-sm);
-  min-height: 44px;
-  font-weight: normal;
-}
-
-.form .choice-option input {
-  width: 20px;
-  height: 20px;
-  min-height: auto;
-}
-
-/* Dialogs */
-.dialog {
-  width: min(92vw, 520px);
-  max-height: 90vh;
-  padding: var(--space-lg);
-  color: var(--color-text);
-  background: var(--color-background);
-  border: none;
-  border-radius: 8px;
-}
-
-.dialog::backdrop {
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.dialog h2 {
-  margin-top: 0;
-  font-size: var(--font-size-heading-mobile);
-}
-
-.dialog-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: var(--space-sm);
-}
-
-.sample-photo {
-  display: grid;
-  place-items: center;
-  height: 120px;
-  border-radius: 6px;
-  background: var(--color-surface);
-  color: var(--color-text-muted);
-}
-
-.guidelines {
-  margin: 0;
-  padding-left: 20px;
+.icon-sm {
+  width: 15px;
+  height: 15px;
 }
 
 /* Advisory (dark text on light background, replacing red on red) */
@@ -626,4 +385,65 @@ h2 {
   color: #FFFFFF;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.app-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-background);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.3);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.app-footer.footer-hidden {
+  display: none;
+}
+
+.app-footer p {
+  margin: 0;
+}
+
+.app-footer a {
+  color: var(--color-primary);
+}
+
+.footer-toggle {
+  position: fixed;
+  right: var(--space-md);
+  bottom: calc(var(--footer-height, 90px) + var(--space-sm));
+  z-index: 1001;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* When the footer is hidden, the button drops to the bottom corner */
+.footer-toggle[aria-expanded="false"] {
+  bottom: var(--space-md);
+}
+
+.footer-toggle-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s;
+}
+
+/* The arrow points up when the footer is hidden */
+.footer-toggle[aria-expanded="false"] .footer-toggle-icon {
+  transform: rotate(180deg);
 }
